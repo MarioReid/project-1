@@ -1,0 +1,17 @@
+.container {
+    margin-bottom: 40px;
+}
+
+#sub-title {
+    font-size: 20px;
+}
+
+.jumbotron {
+  margin: 0 auto;
+  text-align: center;
+  background-color: #374785;
+  border-radius: 5px;
+  color: white;
+  max-width: 800px;
+  padding: 80px;
+}
