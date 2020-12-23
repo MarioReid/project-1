@@ -9,6 +9,14 @@ body {
   text-align: center;
 }
 
+h2, #submit-btn, #sub-title {
+  font-family: "Advent Pro";
+}
+
+h1 {
+  font-family: Pacifico;
+}
+
 h2 {
   margin-top: 30px;
 }
