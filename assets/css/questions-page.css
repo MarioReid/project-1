@@ -1,0 +1,41 @@
+body {
+	background-color: #24305e;
+}
+
+.questionContainer {
+	margin-top: 300px;
+}
+
+h1 {
+	font-family: Pacifico;
+	text-align: center;
+	color: #a8d0e6;
+	margin: 15px;
+}
+
+.buttonsContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+button {
+	font-family: "Advent Pro";
+	font-weight: bold !important;
+	margin-top: 5%;
+	background-color: #f76c6c !important;
+	color: #374785 !important;
+	font-size: 20px !important;
+	margin: 10px;
+}
+
+button:hover {
+	background-color: #374785 !important;
+	color: #f76c6c !important;
+}
+
+.next {
+	float: right;
+	margin-right: 300px;
+	margin-top: 200px;
+}
