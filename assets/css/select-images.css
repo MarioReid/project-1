@@ -7,10 +7,15 @@
 
 body {
   text-align: center;
+  background-color: #374785;
 }
 
 h2, #submit-btn, #sub-title {
   font-family: "Advent Pro";
+}
+
+h2{
+  color:#A8D0E6;
 }
 
 h1 {
@@ -39,9 +44,9 @@ h2 {
 
 .jumbotron {
   margin: 0 auto;
-  background-color: #F76C6C;
+  background-color: #24305E;
   border-radius: 5px;
-  color: white;
+  color:#A8D0E6;
   max-width: 800px;
   padding: 80px;
 }
@@ -92,7 +97,7 @@ h2 {
     margin-top: 30px;
     float: right;
     background-color: #F76C6C;
-    color: white;
+    color:#24305E;
     font-size: 25px;
 }
 
