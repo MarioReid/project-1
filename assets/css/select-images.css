@@ -14,7 +14,7 @@ h2 {
 }
 
 .container {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 #sub-title {
@@ -81,7 +81,7 @@ h2 {
 }
 
 #submit-btn {
-    margin-top: 20px;
+    margin-top: 30px;
     float: right;
     background-color: #F76C6C;
     color: white;
@@ -89,5 +89,5 @@ h2 {
 }
 
 #submit-btn:hover {
-    background-color: #212e61;
+    background-color: #da4c4c;
 }
