@@ -32,7 +32,7 @@
 }
 
 .check-btn {
-  background-color:#F8E9A1;
+  background-color:#f8eaa193;
   position: absolute;
   top: 50%;
   left: 35%;
@@ -47,7 +47,7 @@
 }
 
 .times-btn {
-  background-color:#F8E9A1;
+  background-color:#f8eaa193;
   position: absolute;
   top: 50%;
   left: 65%;
@@ -66,7 +66,7 @@
   }
 
 .fas {
-  color: #F76C6C;
+  color: #24305E;
 }
 
 .wrapper {
