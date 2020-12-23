@@ -1,0 +1,86 @@
+/* COLOR PALETTE */
+/* #F8E9A1 - Yellow */
+/* #F76C6C - Bright red */
+/* #A8D0E6 - Light blue */
+/* #374785 - Darker blue */
+/* #24305E - Darkest blue */
+
+body {
+	background-color: #374785;
+}
+
+h1,
+h5,
+p {
+	text-align: center;
+	color: #a8d0e6;
+}
+
+h1 {
+	font-family: Pacifico;
+}
+
+h5,
+p {
+	font-family: "Advent Pro";
+}
+
+.leftHalf {
+	background-color: #24305e;
+	height: 705px;
+	padding: 18% 10% 20% 10%;
+	float: left;
+}
+
+nav {
+	font-family: "Advent Pro";
+	background-color: none;
+	color: white;
+	padding-right: 10px;
+}
+
+.navbar-nav a {
+	color: white;
+}
+
+.navbar-nav a:hover {
+	color: #f76c6c;
+}
+
+.rightHalf {
+	float: left;
+}
+
+.rightHandText {
+	padding: 20% 10% 20% 10%;
+}
+
+.bottomRight {
+	background-color: #f8e9a1;
+	height: 330px;
+}
+
+.getStarted {
+	color: #24305e;
+	padding-top: 10%;
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+	font-weight: bold;
+	font-family: "Advent Pro";
+}
+button {
+	font-family: "Advent Pro";
+	font-weight: bold !important;
+	margin-top: 5%;
+	background-color: #f76c6c !important;
+	color: #374785 !important;
+	font-size: 20px !important;
+}
+
+button:hover {
+	background-color: #374785 !important;
+	color: #f76c6c !important;
+}
