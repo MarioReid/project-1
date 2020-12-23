@@ -31,11 +31,11 @@
   padding: 80px;
 }
 
-.image-btn {
+.check-btn {
   background-color:#F8E9A1;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 35%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   color: white;
@@ -46,7 +46,22 @@
   border-radius: 5px;
 }
 
-.image-btn:hover {
+.times-btn {
+  background-color:#F8E9A1;
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.check-btn:hover,.times-btn:hover {
     background-color:#f8eaa1b2;
   }
 
