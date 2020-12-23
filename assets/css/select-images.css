@@ -24,7 +24,7 @@
 .jumbotron {
   margin: 0 auto;
   text-align: center;
-  background-color: #374785;
+  background-color: #F76C6C;
   border-radius: 5px;
   color: white;
   max-width: 800px;
@@ -76,7 +76,7 @@
 #submit-btn {
     margin-top: 20px;
     float: right;
-    background-color: #374785;
+    background-color: #F76C6C;
     color: white;
     font-size: 25px;
 }
