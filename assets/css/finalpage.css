@@ -1,0 +1,82 @@
+#body   {
+    background-color: #A8D0E6;
+}
+
+.container {
+    margin-bottom: 40px;
+}
+
+#sub-title {
+    font-size: 20px;
+}
+
+.jumbotron {
+  margin: 0 auto;
+  text-align: center;
+  background-color: #F8E9A1;
+
+  border-radius: 5px;
+  color: #374785;
+  max-width: 800px;
+  padding: 80px;
+}
+
+.pdf-btn {
+    background-color:#F75C6C;
+    position: absolute;
+    top:40%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.share-btn {
+    background-color:#F75C6C;
+    position: absolute;
+    top:47%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.open-btn {
+    background-color:#F75C6C;
+    position: absolute;
+    top:54%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.open2-btn {
+    background-color:#F75C6C;
+    position: absolute;
+    top:61%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
