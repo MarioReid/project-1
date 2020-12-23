@@ -1,3 +1,7 @@
+#body   {
+    background-color: #F8E9A1;
+}
+
 .container {
     margin-bottom: 40px;
 }
@@ -9,9 +13,9 @@
 .jumbotron {
   margin: 0 auto;
   text-align: center;
-  background-color: #374785;
+  background-color: #A8D0E6;
   border-radius: 5px;
-  color: white;
+  color: #374785;
   max-width: 800px;
   padding: 80px;
 }
