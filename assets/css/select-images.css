@@ -1,0 +1,86 @@
+/* COLOR PALETTE */
+/* #F8E9A1 - Yellow */
+/* #F76C6C - Bright red */
+/* #A8D0E6 - Light blue */
+/* #374785 - Darker blue */
+/* #24305E - Darkest blue */
+
+.container {
+    margin-bottom: 40px;
+}
+
+#sub-title {
+    font-size: 20px;
+}
+
+.image-choice {
+  width: 100%;
+  margin-top: 30px;
+  object-fit: cover;
+  height: 275px;
+  border-radius: 5px;
+}
+
+.jumbotron {
+  margin: 0 auto;
+  text-align: center;
+  background-color: #374785;
+  border-radius: 5px;
+  color: white;
+  max-width: 800px;
+  padding: 80px;
+}
+
+.check-btn {
+  background-color:#F8E9A1;
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.times-btn {
+  background-color:#F8E9A1;
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.check-btn:hover,.times-btn:hover {
+    background-color:#f8eaa1b2;
+  }
+
+.fas {
+  color: #F76C6C;
+}
+
+.wrapper {
+  position: relative;
+}
+
+#submit-btn {
+    margin-top: 20px;
+    float: right;
+    background-color: #374785;
+    color: white;
+    font-size: 25px;
+}
+
+#submit-btn:hover {
+    background-color: #212e61;
+}

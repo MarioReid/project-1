@@ -20,27 +20,144 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
-    <!-- Local Stylesheet -->
+    <!-- Local Stylesheets -->
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Visualize</title>
+    <link rel="stylesheet" href="./assets/css/select-images.css" />
+    <title>visualize</title>
   </head>
   <body>
-      <!-- Container -->
+    <!-- Container -->
     <div class="container">
-        <!-- Jumbotron -->
-        <div class="row">
-            <div class="col-sm-8">
-                <div class="jumbotron">
-                    <h1 class="display-4">Hello, world!</h1>
-                    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                    <hr class="my-4">
-                    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                    <p class="lead">
-                      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-                    </p>
-                  </div>
-            </div>
+      <!-- Jumbotron -->
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="jumbotron">
+            <h1 class="display-4">visualize</h1>
+            <p id="sub-title">Choose the images that speak to you!</p>
+          </div>
         </div>
+      </div>
+      <!-- Header -->
+      <div class="row">
+        <div class="col-sm-12">
+            <!-- <h2>Question goes here</h2> -->
+        </div>
+      </div>
+      <!-- Images for user to select for vision board -->
+      <div class="row">
+        <div class="col-sm-3 wrapper">
+          <img
+            class="image-choice"
+            src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            alt=""
+          />
+          <button class="btn check-btn">
+            <i class="fas fa-check-square fa-lg"></i>
+          </button>
+          <button class="btn times-btn">
+            <i class="fas fa-times-circle fa-lg"></i>
+          </button>
+        </div>
+        <div class="col-sm-3 wrapper">
+          <img
+            class="image-choice"
+            src="https://images.pexels.com/photos/4587998/pexels-photo-4587998.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            alt=""
+          />
+          <button class="btn check-btn">
+            <i class="fas fa-check-square fa-lg"></i>
+          </button>
+          <button class="btn times-btn">
+            <i class="fas fa-times-circle fa-lg"></i>
+          </button>
+        </div>
+        <div class="col-sm-3 wrapper">
+          <img
+            class="image-choice"
+            src="https://images.pexels.com/photos/4588435/pexels-photo-4588435.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            alt=""
+          />
+          <button class="btn check-btn">
+            <i class="fas fa-check-square fa-lg"></i>
+          </button>
+          <button class="btn times-btn">
+            <i class="fas fa-times-circle fa-lg"></i>
+          </button>
+        </div>
+        <div class="col-sm-3 wrapper">
+          <img
+            class="image-choice"
+            src="https://images.pexels.com/photos/551628/pexels-photo-551628.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            alt=""
+          />
+          <button class="btn check-btn">
+            <i class="fas fa-check-square fa-lg"></i>
+          </button>
+          <button class="btn times-btn">
+            <i class="fas fa-times-circle fa-lg"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3 wrapper">
+          <img
+            class="image-choice"
+            src="https://images.pexels.com/photos/2820134/pexels-photo-2820134.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            alt=""
+          />
+          <button class="btn check-btn">
+            <i class="fas fa-check-square fa-lg"></i>
+          </button>
+          <button class="btn times-btn">
+            <i class="fas fa-times-circle fa-lg"></i>
+          </button>
+        </div>
+        <div class="col-sm-3 wrapper">
+          <img
+            class="image-choice"
+            src="https://images.pexels.com/photos/2007/animal-dog-pet-cute.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            alt=""
+          />
+          <button class="btn check-btn">
+            <i class="fas fa-check-square fa-lg"></i>
+          </button>
+          <button class="btn times-btn">
+            <i class="fas fa-times-circle fa-lg"></i>
+          </button>
+        </div>
+        <div class="col-sm-3 wrapper">
+          <img
+            class="image-choice"
+            src="https://images.pexels.com/photos/3714060/pexels-photo-3714060.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            alt=""
+          />
+          <button class="btn check-btn">
+            <i class="fas fa-check-square fa-lg"></i>
+          </button>
+          <button class="btn times-btn">
+            <i class="fas fa-times-circle fa-lg"></i>
+          </button>
+        </div>
+        <div class="col-sm-3 wrapper">
+          <img
+            class="image-choice"
+            src="https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            alt=""
+          />
+          <button class="btn check-btn">
+            <i class="fas fa-check-square fa-lg"></i>
+          </button>
+          <button class="btn times-btn">
+            <i class="fas fa-times-circle fa-lg"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Button to take the user to the next page -->
+      <div class="row">
+        <div class="col-sm-12">
+          <button id="submit-btn" class="btn">Done</button>
+        </div>
+      </div>
     </div>
     <!-- jQuery Script File -->
     <script
