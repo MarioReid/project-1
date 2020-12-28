@@ -5,8 +5,16 @@
 /* #374785 - Darker blue */
 /* #24305E - Darkest blue */
 
+body {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 30px;
+}
+
 .container {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 #sub-title {
@@ -23,8 +31,7 @@
 
 .jumbotron {
   margin: 0 auto;
-  text-align: center;
-  background-color: #374785;
+  background-color: #F76C6C;
   border-radius: 5px;
   color: white;
   max-width: 800px;
@@ -32,7 +39,7 @@
 }
 
 .check-btn {
-  background-color:#F8E9A1;
+  background-color:#f8eaa193;
   position: absolute;
   top: 50%;
   left: 35%;
@@ -47,7 +54,7 @@
 }
 
 .times-btn {
-  background-color:#F8E9A1;
+  background-color:#f8eaa193;
   position: absolute;
   top: 50%;
   left: 65%;
@@ -66,7 +73,7 @@
   }
 
 .fas {
-  color: #F76C6C;
+  color: #24305E;
 }
 
 .wrapper {
@@ -74,13 +81,13 @@
 }
 
 #submit-btn {
-    margin-top: 20px;
+    margin-top: 30px;
     float: right;
-    background-color: #374785;
+    background-color: #F76C6C;
     color: white;
     font-size: 25px;
 }
 
 #submit-btn:hover {
-    background-color: #212e61;
+    background-color: #da4c4c;
 }
