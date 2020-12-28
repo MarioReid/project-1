@@ -41,6 +41,7 @@ nav {
 
 .navbar-nav a {
 	color: white !important;
+	text-align: right;
 }
 
 .navbar-nav a:hover {
