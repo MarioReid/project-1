@@ -40,7 +40,7 @@ nav {
 }
 
 .navbar-nav a {
-	color: white;
+	color: white !important;
 }
 
 .navbar-nav a:hover {
@@ -71,6 +71,7 @@ h2 {
 	font-weight: bold;
 	font-family: "Advent Pro";
 }
+
 button {
 	font-family: "Advent Pro";
 	font-weight: bold !important;
