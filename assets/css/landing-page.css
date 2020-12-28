@@ -86,3 +86,5 @@ button:hover {
 	background-color: #374785 !important;
 	color: #f76c6c !important;
 }
+
+/* Add media query for 786px to remove navbar */
