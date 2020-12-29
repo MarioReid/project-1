@@ -1,6 +1,6 @@
 $(document).ready(function () {
   var APIkey = "563492ad6f91700001000001b70fb799bff84ca4b8a69bfeb2fb60e3";
-  var query = "horses";
+  var query = "work";
 
   $.ajax({
     url: "https://api.pexels.com/v1/search?query=" + query,
@@ -10,9 +10,13 @@ $(document).ready(function () {
     console.log(response);
     console.log(response.photos[0].src.original);
     var randomImage = Math.floor(Math.random() * response.photos.length)
-    // Create image and add it to the page
-    imageSource = response.photos[randomImage].src.medium;
+    // Add header to the page
     var workDiv = $("#work-image");
+    var workHeader = $("<h2>");
+    workHeader.text("Work");
+    workDiv.append(workHeader);
+    // Create image and add it to the page
+    imageSource = response.photos[randomImage].src.original;
     var workImage = $("<img>");
     workImage.attr("src", imageSource);
     workImage.addClass("image-choice");
