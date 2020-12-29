@@ -16,13 +16,21 @@ $(document).ready(function () {
     workImage.attr("src", imageSource);
     workImage.addClass("image-choice");
     workDiv.append(workImage);
-    // Create buttons and add them to the images
+    // Create check button
     var checkBtn = $("<button>");
     checkBtn.addClass("btn check-btn");
     var checkIcon = $("<i>");
     checkIcon.addClass("fas fa-check-square fa-lg");
     checkBtn.append(checkIcon);
+    // Create times button
+    var timesBtn = $("<button>");
+    timesBtn.addClass("btn times-btn");
+    var timesIcon = $("<i>");
+    timesIcon.addClass("fas fa-times-circle fa-lg");
+    timesBtn.append(timesIcon)
+    // Append buttons to the work div
     workDiv.append(checkBtn);
+    workDiv.append(timesBtn);
     // If src is not empty, add buttons
   });
 });
