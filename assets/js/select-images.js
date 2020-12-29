@@ -11,7 +11,7 @@ $(document).ready(function () {
     console.log(response.photos[0].src.original);
     var randomImage = Math.floor(Math.random() * response.photos.length)
     // Create image and add it to the page
-    imageSource = response.photos[randomImage].src.original;
+    imageSource = response.photos[randomImage].src.medium;
     var workDiv = $("#work-image");
     var workImage = $("<img>");
     workImage.attr("src", imageSource);
