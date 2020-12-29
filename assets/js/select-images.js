@@ -9,13 +9,20 @@ $(document).ready(function () {
   }).then(function (response) {
     console.log(response);
     console.log(response.photos[0].src.original);
+    // Create image and add it to the page
     imageSource = response.photos[0].src.original;
-    // Select image
     var workDiv = $("#work-image");
     var workImage = $("<img>");
     workImage.attr("src", imageSource);
     workImage.addClass("image-choice");
     workDiv.append(workImage);
+    // Create buttons and add them to the images
+    var checkBtn = $("<button>");
+    checkBtn.addClass("btn check-btn");
+    var checkIcon = $("<i>");
+    checkIcon.addClass("fas fa-check-square fa-lg");
+    checkBtn.append(checkIcon);
+    workDiv.append(checkBtn);
     // If src is not empty, add buttons
   });
 });
