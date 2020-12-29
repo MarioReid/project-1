@@ -9,10 +9,7 @@ $(document).ready(function () {
     $(".check-btn").attr("style","background-color:green");
   }
 
-  function newImage(event){
-    event.preventDefault();
-    // Generate new image using math.random
-  }
+  
 
   $.ajax({
     url: "https://api.pexels.com/v1/search?query=" + query,
@@ -49,6 +46,12 @@ $(document).ready(function () {
     workDiv.append(checkBtn);
     workDiv.append(timesBtn);
     // If the check button is clicked, the image stays. If the times button is clicked, a new image is generated
-    $(checkBtn).on("click", keepImage)
+    function newImage(event){
+      event.preventDefault();
+      // Generate new image using math.random
+      
+    }
+    $(checkBtn).on("click", keepImage);
+    $(timesBtn).on("click", newImage);
   });
 });
