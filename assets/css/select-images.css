@@ -52,13 +52,12 @@ h2 {
 }
 
 .check-btn {
-  background-color:#f8eaa193;
+  background-color:#464646a3;
   position: absolute;
-  top: 50%;
-  left: 35%;
+  top: 40%;
+  left: 20%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  color: white;
   font-size: 16px;
   padding: 12px 24px;
   border: none;
@@ -67,13 +66,12 @@ h2 {
 }
 
 .times-btn {
-  background-color:#f8eaa193;
+  background-color:#464646a3;
   position: absolute;
-  top: 50%;
-  left: 65%;
+  top: 40%;
+  left: 80%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  color: white;
   font-size: 16px;
   padding: 12px 24px;
   border: none;
@@ -82,11 +80,12 @@ h2 {
 }
 
 .check-btn:hover,.times-btn:hover {
-    background-color:#f8eaa1b2;
+    background-color:#212121a3;
   }
 
 .fas {
-  color: #24305E;
+  color: #ededed;
+  ;
 }
 
 .wrapper {
