@@ -1,6 +1,18 @@
 $(document).ready(function () {
+  // Variables
   var APIkey = "563492ad6f91700001000001b70fb799bff84ca4b8a69bfeb2fb60e3";
   var query = "work";
+
+  // Function to keep image when the check mark is clicked
+  function keepImage(event){
+    event.preventDefault();
+    $(".check-btn").attr("style","background-color:green");
+  }
+
+  function newImage(event){
+    event.preventDefault();
+    // Generate new image using math.random
+  }
 
   $.ajax({
     url: "https://api.pexels.com/v1/search?query=" + query,
@@ -36,6 +48,7 @@ $(document).ready(function () {
     // Append buttons to the work div
     workDiv.append(checkBtn);
     workDiv.append(timesBtn);
-    // If src is not empty, add buttons
+    // If the check button is clicked, the image stays. If the times button is clicked, a new image is generated
+    $(checkBtn).on("click", keepImage)
   });
 });
