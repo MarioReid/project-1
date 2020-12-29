@@ -65,7 +65,10 @@ h2 {
   border-radius: 5px;
 }
 
+
+
 .times-btn {
+  /* color: #6dda6dbd; */
   background-color:#464646a3;
   position: absolute;
   top: 40%;
