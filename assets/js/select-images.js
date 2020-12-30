@@ -24,29 +24,36 @@ $(document).ready(function () {
       answers: ["Money", "Family", "Helping others", "Fun"],
     },
   };
+  var answerOneDivs = {
+    work: $("#work"),
+    school: $("#school"),
+    relationships: $("#relationsips"),
+    health: $("#health"),
+  };
 
   var randomImage;
 
-  // Function to keep image 
+  // Function to keep image
   function keepImage(event) {
     event.preventDefault();
     $(".check-btn").attr("style", "background-color:#6dda6dbd");
   }
 
   $.ajax({
-    url: "https://api.pexels.com/v1/search?query=" + query.questionOne.answers[0],
+    url:
+      "https://api.pexels.com/v1/search?query=" + query.questionOne.answers[0],
     method: "GET",
     headers: { Authorization: APIkey },
   }).then(function (response) {
     console.log(response);
     // Variables
-    var workDiv = $("#work");
+    var div = answerOneDivs.work;
     var workImageDiv = $("#work-image");
     var workHeader = $("<h2>");
     var checkBtn = $("<button>");
     var timesBtn = $("<button>");
-    var questionOneDiv = $("#question-one")
-    var questionOne = $("<h2>")
+    var questionOneDiv = $("#question-one");
+    var questionOne = $("<h2>");
     // Function to create the image and the header
     function createImage() {
       workImageDiv.empty();
@@ -57,14 +64,14 @@ $(document).ready(function () {
       // Add work header to the page
       workHeader.text(query.questionOne.answers[0]);
       workImageDiv.append(workHeader);
-      workDiv.append(workImageDiv);
+      div.append(workImageDiv);
       // Create image and add it to the page
       imageSource = response.photos[randomImage].src.original;
       var workImage = $("<img>");
       workImage.attr("src", imageSource);
       workImage.addClass("image-choice");
       workImageDiv.append(workImage);
-      workDiv.append(workImageDiv);
+      div.append(workImageDiv);
     }
 
     function createButtons() {
@@ -82,8 +89,8 @@ $(document).ready(function () {
     createButtons();
 
     // Append buttons to the work div
-    workDiv.append(checkBtn);
-    workDiv.append(timesBtn);
+    div.append(checkBtn);
+    div.append(timesBtn);
 
     createImage();
 
