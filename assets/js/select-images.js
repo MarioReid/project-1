@@ -20,8 +20,10 @@ $(document).ready(function () {
     var workDiv = $("#work");
     var workImageDiv = $("#work-image");
     var workHeader = $("<h2>");
+    var checkBtn = $("<button>");
+    var timesBtn = $("<button>");
     // Function to create the image and the header
-    function createImage() {
+    function createWorkImage() {
       workImageDiv.empty();
       randomImage = Math.floor(Math.random() * response.photos.length);
       // Add header to the page
@@ -36,30 +38,33 @@ $(document).ready(function () {
       workImageDiv.append(workImage);
       workDiv.append(workImageDiv);
     }
-    // Create check button
-    var checkBtn = $("<button>");
-    checkBtn.addClass("btn check-btn");
-    var checkIcon = $("<i>");
-    checkIcon.addClass("fas fa-check-square fa-lg");
-    checkBtn.append(checkIcon);
-    // Create times button
-    var timesBtn = $("<button>");
-    timesBtn.addClass("btn times-btn");
-    var timesIcon = $("<i>");
-    timesIcon.addClass("fas fa-times-circle fa-lg");
-    timesBtn.append(timesIcon);
+
+    function createButtons() {
+      // Create check button
+      checkBtn.addClass("btn check-btn");
+      var checkIcon = $("<i>");
+      checkIcon.addClass("fas fa-check-square fa-lg");
+      checkBtn.append(checkIcon);
+      // Create times button
+      timesBtn.addClass("btn times-btn");
+      var timesIcon = $("<i>");
+      timesIcon.addClass("fas fa-times-circle fa-lg");
+      timesBtn.append(timesIcon);
+    }
+    createButtons();
+
     // Append buttons to the work div
     workDiv.append(checkBtn);
     workDiv.append(timesBtn);
 
-    createImage();
+    createWorkImage();
 
     // Function to get a new image when the times button is clicked
     function getNewImage(event) {
       if ($(".check-btn").attr("style", "background-color:#6dda6dbd")) {
         $(".check-btn").attr("style", "background-color: #464646a3");
       }
-      createImage();
+      createWorkImage();
     }
 
     // Event listners
