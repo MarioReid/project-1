@@ -45,12 +45,17 @@ $(document).ready(function () {
     var workHeader = $("<h2>");
     var checkBtn = $("<button>");
     var timesBtn = $("<button>");
+    var questionOneDiv = $("#question-one")
+    var questionOne = $("<h2>")
     // Function to create the image and the header
     function createImage() {
       workImageDiv.empty();
       randomImage = Math.floor(Math.random() * response.photos.length);
-      // Add header to the page
-      workHeader.text("Work");
+      // Add question header to the page
+      questionOne.text(query.questionOne.question);
+      questionOneDiv.append(questionOne);
+      // Add work header to the page
+      workHeader.text(query.questionOne.answers[0]);
       workImageDiv.append(workHeader);
       workDiv.append(workImageDiv);
       // Create image and add it to the page
