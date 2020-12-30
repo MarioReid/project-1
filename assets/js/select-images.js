@@ -54,14 +54,18 @@ $(document).ready(function () {
 
     createImage();
 
+    // Function to get a new image when the times button is clicked
+    function getNewImage(event) {
+      if ($(".check-btn").attr("style", "background-color:#6dda6dbd")) {
+        $(".check-btn").attr("style", "background-color: #464646a3");
+      }
+      createImage();
+    }
+
     // Event listners
     $(".check-btn").on("click", keepImage);
-    $(".times-btn").on("click", function test() {
-    if($(".check-btn").attr("style", "background-color:#6dda6dbd")){
-      $(".check-btn").attr("style","background-color: #464646a3");
-    }
-      createImage();
-    });
+    $(".times-btn").on("click", getNewImage);
   });
 });
+
 // If check  button color = #6dda6dbd, add to vision board
