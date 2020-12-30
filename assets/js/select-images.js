@@ -4,36 +4,37 @@ $(document).ready(function () {
   var query = {
     questionOne: {
       question: "What areas of your life do you want to change?",
-      answers: ["Work","School", "Relationships","Health"]
-    }
+      answers: ["Work", "School", "Relationships", "Health"],
+    },
     questionTwo: {
       queston: "What drives you?",
-      answers: ["Money","Recognition","Power","Passion","Helping others"]
-    }
+      answers: ["Money", "Recognition", "Power", "Passion", "Helping others"],
+    },
     questionThree: {
       question: "If you could have one dream vacation, where would you travel?",
-      answers: ["Islands","Mountains","Beach","Country"]
-    }
+      answers: ["Islands", "Mountains", "Beach", "Country"],
+    },
     questionFour: {
-      question: "What have you always wanted to do but never had the courage to do?",
-      answers: ["Travel", "Sports activities", "Go back to school"]
-    }
+      question:
+        "What have you always wanted to do but never had the courage to do?",
+      answers: ["Travel", "Sports activities", "Go back to school"],
+    },
     questionFive: {
       questoin: "What makes you happy?",
-      answers: ["Money", "Family","Helping others","Fun"]
-    }
-  }
-  
+      answers: ["Money", "Family", "Helping others", "Fun"],
+    },
+  };
+
   var randomImage;
 
-  // Function to keep image when the check mark is clicked
+  // Function to keep image 
   function keepImage(event) {
     event.preventDefault();
     $(".check-btn").attr("style", "background-color:#6dda6dbd");
   }
 
   $.ajax({
-    url: "https://api.pexels.com/v1/search?query=" + query,
+    url: "https://api.pexels.com/v1/search?query=" + query.questionOne.answers[0],
     method: "GET",
     headers: { Authorization: APIkey },
   }).then(function (response) {
