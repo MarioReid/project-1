@@ -16,22 +16,26 @@ $(document).ready(function () {
     headers: { Authorization: APIkey },
   }).then(function (response) {
     console.log(response);
+    // Variables
     var workDiv = $("#work");
     var workImageDiv = $("#work-image");
     var workHeader = $("<h2>");
-    workImageDiv.empty();
-    randomImage = Math.floor(Math.random() * response.photos.length);
-    // Add header to the page
-    workHeader.text("Work");
-    workImageDiv.append(workHeader);
-    workDiv.append(workImageDiv);
-    // Create image and add it to the page
-    imageSource = response.photos[randomImage].src.original;
-    var workImage = $("<img>");
-    workImage.attr("src", imageSource);
-    workImage.addClass("image-choice");
-    workImageDiv.append(workImage);
-    workDiv.append(workImageDiv);
+    // Function to create the image and the header
+    function createImage() {
+      workImageDiv.empty();
+      randomImage = Math.floor(Math.random() * response.photos.length);
+      // Add header to the page
+      workHeader.text("Work");
+      workImageDiv.append(workHeader);
+      workDiv.append(workImageDiv);
+      // Create image and add it to the page
+      imageSource = response.photos[randomImage].src.original;
+      var workImage = $("<img>");
+      workImage.attr("src", imageSource);
+      workImage.addClass("image-choice");
+      workImageDiv.append(workImage);
+      workDiv.append(workImageDiv);
+    }
     // Create check button
     var checkBtn = $("<button>");
     checkBtn.addClass("btn check-btn");
@@ -48,21 +52,15 @@ $(document).ready(function () {
     workDiv.append(checkBtn);
     workDiv.append(timesBtn);
 
-    // If the check button is clicked, the image stays. If the times button is clicked, a new image is generated
+    createImage();
+
+    // Event listners
     $(".check-btn").on("click", keepImage);
     $(".times-btn").on("click", function test() {
-      console.log("You clicked the times button!");
-      workImageDiv.empty();
-      randomImage = Math.floor(Math.random() * response.photos.length);
-      console.log(randomImage);
-      imageSource = response.photos[randomImage].src.original;
-      var workImage = $("<img>");
-      workImage.attr("src", imageSource);
-      workImage.addClass("image-choice");
-      workImageDiv.append(workImage);
-      workDiv.append(workImageDiv);
-      console.log(imageSource);
-      return imageSource;
+    if($(".check-btn").attr("style", "background-color:#6dda6dbd")){
+      $(".check-btn").attr("style","background-color: #464646a3");
+    }
+      createImage();
     });
   });
 });
