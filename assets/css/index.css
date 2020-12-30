@@ -1,0 +1,96 @@
+/* COLOR PALETTE */
+/* #F8E9A1 - Yellow */
+/* #F76C6C - Bright red */
+/* #A8D0E6 - Light blue */
+/* #374785 - Darker blue */
+/* #24305E - Darkest blue */
+
+body {
+	background-color: #374785;
+}
+
+h1,
+h5,
+p {
+	text-align: center;
+	color: #a8d0e6;
+}
+
+h1 {
+	font-family: Pacifico;
+}
+
+h5,
+p {
+	font-family: "Advent Pro";
+}
+
+.footer {
+	text-align: center;
+	color: white;
+}
+
+.leftHalf {
+	background-color: #24305e;
+	padding: 8% 10% 8% 10%;
+	float: left;
+}
+
+nav {
+	font-family: "Advent Pro";
+	background-color: none;
+	color: white;
+	padding-right: 10px;
+}
+
+.navbar-nav a {
+	color: white !important;
+	text-align: right;
+}
+
+.navbar-nav a:hover {
+	color: #f76c6c;
+}
+
+.rightHalf {
+	float: left;
+}
+
+.rightHandText {
+	padding: 7% 5% 7% 5%;
+}
+
+.bottomRight {
+	background-color: #f8e9a1;
+	padding-bottom: 6%;
+	margin-bottom: 15px;
+	height: 307px;
+}
+
+.getStarted {
+	color: #24305e;
+	padding-top: 77px;
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+	font-weight: bold;
+	font-family: "Advent Pro";
+}
+
+button {
+	font-family: "Advent Pro";
+	font-weight: bold !important;
+	margin-top: 5%;
+	background-color: #f76c6c !important;
+	color: #374785 !important;
+	font-size: 20px !important;
+}
+
+button:hover {
+	background-color: #374785 !important;
+	color: #f76c6c !important;
+}
+
+/* Add media query for 786px to remove navbar */
