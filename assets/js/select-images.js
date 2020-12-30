@@ -1,7 +1,29 @@
 $(document).ready(function () {
   // Variables
   var APIkey = "563492ad6f91700001000001b70fb799bff84ca4b8a69bfeb2fb60e3";
-  var query = "work";
+  var query = {
+    questionOne: {
+      question: "What areas of your life do you want to change?",
+      answers: ["Work","School", "Relationships","Health"]
+    }
+    questionTwo: {
+      queston: "What drives you?",
+      answers: ["Money","Recognition","Power","Passion","Helping others"]
+    }
+    questionThree: {
+      question: "If you could have one dream vacation, where would you travel?",
+      answers: ["Islands","Mountains","Beach","Country"]
+    }
+    questionFour: {
+      question: "What have you always wanted to do but never had the courage to do?",
+      answers: ["Travel", "Sports activities", "Go back to school"]
+    }
+    questionFive: {
+      questoin: "What makes you happy?",
+      answers: ["Money", "Family","Helping others","Fun"]
+    }
+  }
+  
   var randomImage;
 
   // Function to keep image when the check mark is clicked
@@ -23,7 +45,7 @@ $(document).ready(function () {
     var checkBtn = $("<button>");
     var timesBtn = $("<button>");
     // Function to create the image and the header
-    function createWorkImage() {
+    function createImage() {
       workImageDiv.empty();
       randomImage = Math.floor(Math.random() * response.photos.length);
       // Add header to the page
@@ -57,17 +79,17 @@ $(document).ready(function () {
     workDiv.append(checkBtn);
     workDiv.append(timesBtn);
 
-    createWorkImage();
+    createImage();
 
     // Function to get a new image when the times button is clicked
     function getNewImage(event) {
       if ($(".check-btn").attr("style", "background-color:#6dda6dbd")) {
         $(".check-btn").attr("style", "background-color: #464646a3");
       }
-      createWorkImage();
+      createImage();
     }
 
-    // Event listners
+    // Event listeners
     $(".check-btn").on("click", keepImage);
     $(".times-btn").on("click", getNewImage);
   });
