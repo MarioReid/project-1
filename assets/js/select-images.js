@@ -24,13 +24,6 @@ $(document).ready(function () {
       answers: ["Money", "Family", "Helping others", "Fun"],
     },
   };
-  var answerOneDivs = {
-    work: $("#work"),
-    school: $("#school"),
-    relationships: $("#relationsips"),
-    health: $("#health"),
-  };
-
   var randomImage;
 
   // Function to keep image
@@ -39,6 +32,7 @@ $(document).ready(function () {
     $(".check-btn").attr("style", "background-color:#6dda6dbd");
   }
 
+  // Ajax call for question one
   $.ajax({
     url:
       "https://api.pexels.com/v1/search?query=" + query.questionOne.answers[0],
@@ -47,31 +41,31 @@ $(document).ready(function () {
   }).then(function (response) {
     console.log(response);
     // Variables
-    var div = answerOneDivs.work;
-    var workImageDiv = $("#work-image");
-    var workHeader = $("<h2>");
+    var div = $("#" + query.questionOne.answers[0].toLowerCase());
+    var imageWrapper = $("#" + query.questionOne.answers[0].toLowerCase() + "-image");
+    var header = $("<h2>");
     var checkBtn = $("<button>");
     var timesBtn = $("<button>");
     var questionOneDiv = $("#question-one");
     var questionOne = $("<h2>");
     // Function to create the image and the header
     function createImage() {
-      workImageDiv.empty();
+      imageWrapper.empty();
       randomImage = Math.floor(Math.random() * response.photos.length);
       // Add question header to the page
       questionOne.text(query.questionOne.question);
       questionOneDiv.append(questionOne);
       // Add work header to the page
-      workHeader.text(query.questionOne.answers[0]);
-      workImageDiv.append(workHeader);
-      div.append(workImageDiv);
+      header.text(query.questionOne.answers[0]);
+      imageWrapper.append(header);
+      div.append(imageWrapper);
       // Create image and add it to the page
       imageSource = response.photos[randomImage].src.original;
-      var workImage = $("<img>");
-      workImage.attr("src", imageSource);
-      workImage.addClass("image-choice");
-      workImageDiv.append(workImage);
-      div.append(workImageDiv);
+      var generatedImage = $("<img>");
+      generatedImage.attr("src", imageSource);
+      generatedImage.addClass("image-choice");
+      imageWrapper.append(generatedImage);
+      div.append(imageWrapper);
     }
 
     function createButtons() {
