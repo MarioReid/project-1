@@ -1,4 +1,4 @@
-#body   {
+body   {
     background-color: #A8D0E6;
 }
 
@@ -20,63 +20,11 @@
   max-width: 800px;
   padding: 50px;
 }
-
-.pdf-btn {
+.btn {
     background-color:#F75C6C;
-    position: absolute;
-    top:40%;
-    left: 90%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    color: white;
-    font-size: 16px;
     padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
+    float: right;
+    margin-top: 5px;
+    width: 70px;
 
-.share-btn {
-    background-color:#F75C6C;
-    position: absolute;
-    top:47%;
-    left: 90%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    color: white;
-    font-size: 16px;
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.open-btn {
-    background-color:#F75C6C;
-    position: absolute;
-    top:54%;
-    left: 90%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    color: white;
-    font-size: 16px;
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.open2-btn {
-    background-color:#F75C6C;
-    position: absolute;
-    top:61%;
-    left: 90%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    color: white;
-    font-size: 16px;
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
 }
