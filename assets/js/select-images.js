@@ -18,6 +18,23 @@ $(document).ready(function () {
       answers: ["Money", "Family", "Helping others", "Fun"],
     },
   };
+  var queryIds = {
+    questionOne: {
+      answers: ["work", "school", "relationships", "health"],
+    },
+    questionTwo: {
+      answers: ["money", "recognition", "power", "passion", "helping-others"],
+    },
+    questionThree: {
+      answers: ["islands", "mountains", "beach", "country"],
+    },
+    questionFour: {
+      answers: ["travel", "sports-activities", "go-back-to-school"],
+    },
+    questionFive: {
+      answers: ["money", "family", "helping-others", "fun"],
+    },
+  };
 
   var queryQuestions = {
     questions:["What areas of your life do you want to change?","What drives you?","If you could have one dream vacation, where would you travel?","What have you always wanted to do but never had the courage to do?", "What makes you happy?"]
@@ -43,9 +60,8 @@ $(document).ready(function () {
   }).then(function (response) {
     console.log(response);
     // Variables
-    var div = $("#" + queryAnswers.questionOne.answers[0].toLowerCase());
-    var div = $("#work")
-    var imageWrapper = $("#" + queryAnswers.questionOne.answers[0].toLowerCase() + "-image");
+    var div = $("#" + queryIds.questionOne.answers[0]);
+    var imageWrapper = $("#" + queryIds.questionOne.answers[0] + "-image");
     var header = $("<h2>");
     var checkBtn = $("<button>");
     var timesBtn = $("<button>");
@@ -60,6 +76,75 @@ $(document).ready(function () {
       questionOneDiv.append(questionOne);
       // Add work header to the page
       header.text(queryAnswers.questionOne.answers[0]);
+      imageWrapper.append(header);
+      div.append(imageWrapper);
+      // Create image and add it to the page
+      imageSource = response.photos[randomImage].src.original;
+      var generatedImage = $("<img>");
+      generatedImage.attr("src", imageSource);
+      generatedImage.addClass("image-choice");
+      imageWrapper.append(generatedImage);
+      div.append(imageWrapper);
+    }
+
+    function createButtons() {
+      // Create check button
+      checkBtn.addClass("btn check-btn");
+      var checkIcon = $("<i>");
+      checkIcon.addClass("fas fa-check-square fa-lg");
+      checkBtn.append(checkIcon);
+      // Create times button
+      timesBtn.addClass("btn times-btn");
+      var timesIcon = $("<i>");
+      timesIcon.addClass("fas fa-times-circle fa-lg");
+      timesBtn.append(timesIcon);
+    }
+    createButtons();
+
+    // Append buttons to the work div
+    div.append(checkBtn);
+    div.append(timesBtn);
+
+    createImage();
+
+    // Function to get a new image when the times button is clicked
+    function getNewImage(event) {
+      if ($(".check-btn").attr("style", "background-color:#6dda6dbd")) {
+        $(".check-btn").attr("style", "background-color: #464646a3");
+      }
+      createImage();
+    }
+
+    // Event listeners
+    $(".check-btn").on("click", keepImage);
+    $(".times-btn").on("click", getNewImage);
+  });
+
+  // AJAX call for Question 2
+  $.ajax({
+    url:
+      "https://api.pexels.com/v1/search?query=" + queryAnswers.questionTwo.answers[0],
+    method: "GET",
+    headers: { Authorization: APIkey },
+  }).then(function (response) {
+    console.log(response);
+    // Variables
+    var div = $("#" + queryIds.questionTwo.answers[0]);
+    var imageWrapper = $("#" + queryIds.questionTwo.answers[0] + "-image");
+    var header = $("<h2>");
+    var checkBtn = $("<button>");
+    var timesBtn = $("<button>");
+    var questionTwoDiv = $("#question-one");
+    var questionTwo = $("<h2>");
+    // Function to create the image and the header
+    function createImage() {
+      imageWrapper.empty();
+      randomImage = Math.floor(Math.random() * response.photos.length);
+      // Add question header to the page
+      questionTwo.text(queryQuestions[0]);
+      questionTwoDiv.append(questionTwo);
+      // Add work header to the page
+      header.text(queryAnswers.questionTwo.answers[0]);
       imageWrapper.append(header);
       div.append(imageWrapper);
       // Create image and add it to the page
