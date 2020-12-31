@@ -86,7 +86,7 @@ $(document).ready(function () {
       imageWrapper.append(generatedImage);
       div.append(imageWrapper);
     }
-
+// Question 1
     function createButtons() {
       // Create check button
       checkBtn.addClass("btn check-btn");
@@ -134,7 +134,7 @@ $(document).ready(function () {
     var header = $("<h2>");
     var checkBtn = $("<button>");
     var timesBtn = $("<button>");
-    var questionTwoDiv = $("#question-one");
+    var questionTwoDiv = $("#question-two");
     var questionTwo = $("<h2>");
     // Function to create the image and the header
     function createImage() {
@@ -143,7 +143,7 @@ $(document).ready(function () {
       // Add question header to the page
       questionTwo.text(queryQuestions[0]);
       questionTwoDiv.append(questionTwo);
-      // Add work header to the page
+      // Add answer header to the page
       header.text(queryAnswers.questionTwo.answers[0]);
       imageWrapper.append(header);
       div.append(imageWrapper);
