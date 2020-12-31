@@ -33,6 +33,9 @@ $(document).ready(function () {
   }
 
   // Ajax call for question one
+  // for(var i =0; i < query.questionOne.answers.length; i++){
+    
+  // }
   $.ajax({
     url:
       "https://api.pexels.com/v1/search?query=" + query.questionOne.answers[0],
