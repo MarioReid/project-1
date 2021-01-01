@@ -2,7 +2,7 @@ body {
 	background-color: #24305e;
 }
 
-.questionContainer {
+#questionContainer {
 	margin-top: 300px;
 }
 
@@ -13,7 +13,7 @@ h1 {
 	margin: 15px;
 }
 
-.buttonsContainer {
+#buttonsContainer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -26,6 +26,7 @@ button {
 	background-color: #f76c6c !important;
 	color: #374785 !important;
 	font-size: 20px !important;
+	padding: 10px !important;
 	margin: 10px;
 }
 
@@ -34,8 +35,7 @@ button:hover {
 	color: #f76c6c !important;
 }
 
-.next {
+#nextBtn {
 	float: right;
-	margin-right: 300px;
 	margin-top: 200px;
 }
