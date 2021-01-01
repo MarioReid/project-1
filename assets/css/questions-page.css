@@ -13,7 +13,7 @@ h1 {
 	margin: 15px;
 }
 
-.#buttonsContainer {
+#buttonsContainer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
