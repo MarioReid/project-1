@@ -28,36 +28,33 @@
   <body>
     <!-- Container -->
     <div class="container">
-      <div id="questionContainer">
+      <div >
         <!-- Question -->
         <div class="row">
-          <div class="col-sm-12">
-            <h1>[This will be a question]?</h1>
+          <div class="col-sm-12" id="question">
+            <h1 id="questionContainer"></h1>
           </div>
         </div>
         <!-- Answer Buttons -->
         <div id="buttonsContainer" class="row">
           <div class="col-sm-2">
-            <button class="btn answer-btn">Option 1</button>
+            <button class="btn" id="option1"></button>
+          </div>
+          <div class="col-sm-2" >
+            <button class="btn" id="option2"></button>
           </div>
           <div class="col-sm-2">
-            <button class="btn answer-btn">Option 2</button>
+            <button class="btn" id="option3"></button>
           </div>
-          <div class="col-sm-2">
-            <button class="btn answer-btn">Option 3</button>
-          </div>
-          <div class="col-sm-2">
-            <button class="btn answer-btn">Option 4</button>
-          </div>
-          <div class="col-sm-2">
-            <button class="btn answer-btn">Option 5</button>
+          <div class="col-sm-2" >
+            <button class="btn" id="option4"></button>
           </div>
         </div>
       </div>
       <!-- Next Button -->
       <div id="nextBtn" class="row">
         <div class="col-sm-12">
-          <a href="select-images.html"
+          <!-- <a href="select-images.html" -->
             ><button class="btn"><i class="fas fa-angle-right"></i></button
           ></a>
         </div>
@@ -70,6 +67,6 @@
       crossorigin="anonymous"
 	></script>
 	<!-- Local Script Files -->
-    <script src="./assets/js/issue31.js" async defer></script>
+    <script src="./assets/js/questions.js" async defer></script>
   </body>
 </html>
