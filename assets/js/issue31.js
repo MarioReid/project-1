@@ -1,21 +1,21 @@
 $(document).ready(function () {
+  // Variables for local storage
+  var selectedAnswers =
+    JSON.parse(localStorage.getItem("selected-answers")) || [];
+
   // Function to select clicked answer
-  function selectAnswer() {
+  function selectAnswer(event) {
+    var answerText = $(this)[0].outerText;
     if ($(this).hasClass("active")) {
       $(this).removeClass("active");
+      selectedAnswers.splice(answerText);
     } else if (!$(this).hasClass("active")) {
       $(this).addClass("active");
+      selectedAnswers.push(answerText);
+      console.log(selectedAnswers);
     }
-  }
-  
-  // Function to save answer to local storage
-  function storeAnswer() {
-    console.log($(this));
-    console.log($(this)[0].outerText);
-    console.log("you clicked an answer Button!");
   }
 
   // Event listeners
   $(".btn").on("click", selectAnswer);
-  $("#nextBtn").on("click", storeAnswer);
 });
