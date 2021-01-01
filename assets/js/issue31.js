@@ -27,8 +27,6 @@ $(document).ready(function () {
     }
   }
 
-  //   selectedAnswers.data("hours", hoursArray[i]);
-
   // Event listeners
   $(".btn").on("click", selectAnswer);
 });
