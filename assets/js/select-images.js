@@ -37,24 +37,25 @@ $(document).ready(function () {
   };
 
   var queryQuestions = {
-    questions:["What areas of your life do you want to change?","What drives you?","If you could have one dream vacation, where would you travel?","What have you always wanted to do but never had the courage to do?", "What makes you happy?"]
+    questions: [
+      "What areas of your life do you want to change?",
+      "What drives you?",
+      "If you could have one dream vacation, where would you travel?",
+      "What have you always wanted to do but never had the courage to do?",
+      "What makes you happy?",
+    ],
   };
 
   var randomImage;
 
-  // Function to keep image
-  function keepImage(event) {
-    event.preventDefault();
-    $(".check-btn").attr("style", "background-color:#6dda6dbd");
-  }
-
   // Ajax call for question one
   // for(var i =0; i < queryAnswers.questionOne.answers.length; i++){
-    
+
   // }
   $.ajax({
     url:
-      "https://api.pexels.com/v1/search?query=" + queryAnswers.questionOne.answers[0],
+      "https://api.pexels.com/v1/search?query=" +
+      queryAnswers.questionOne.answers[0],
     method: "GET",
     headers: { Authorization: APIkey },
   }).then(function (response) {
@@ -85,7 +86,6 @@ $(document).ready(function () {
       imageWrapper.append(generatedImage);
       div.append(imageWrapper);
     }
-// Question 1
     function createButtons() {
       // Create check button
       checkBtn.addClass("btn check-btn");
@@ -122,7 +122,8 @@ $(document).ready(function () {
   // AJAX call for Question 2
   $.ajax({
     url:
-      "https://api.pexels.com/v1/search?query=" + queryAnswers.questionTwo.answers[0],
+      "https://api.pexels.com/v1/search?query=" +
+      queryAnswers.questionTwo.answers[0],
     method: "GET",
     headers: { Authorization: APIkey },
   }).then(function (response) {
@@ -134,6 +135,8 @@ $(document).ready(function () {
     var timesBtn = $("<button>");
     var questionTwoDiv = $("#question-two");
     var questionTwo = $("<h2>");
+    var checkBtnId = "#" + queryIds.questionTwo.answers[0] + "-keep-btn";
+    var timesBtnId = "#" + queryIds.questionTwo.answers[0] + "-remove-btn";
     // Function to create the image and the header
     function createImage() {
       imageWrapper.empty();
@@ -156,17 +159,26 @@ $(document).ready(function () {
 
     function createButtons() {
       // Create check button
+      console.log(checkBtnId);
       checkBtn.addClass("btn check-btn");
+      checkBtn.attr("id", queryIds.questionTwo.answers[0] + "-keep-btn");
       var checkIcon = $("<i>");
       checkIcon.addClass("fas fa-check-square fa-lg");
       checkBtn.append(checkIcon);
       // Create times button
       timesBtn.addClass("btn times-btn");
+      timesBtn.attr("id", queryIds.questionTwo.answers[0] + "-remove-btn")
       var timesIcon = $("<i>");
       timesIcon.addClass("fas fa-times-circle fa-lg");
       timesBtn.append(timesIcon);
     }
     createButtons();
+
+    // Function to keep image
+    function keepImage(event) {
+      event.preventDefault();
+      $(checkBtnId).attr("style", "background-color:#6dda6dbd");
+    }
 
     // Append buttons to the work div
     div.append(checkBtn);
@@ -176,21 +188,22 @@ $(document).ready(function () {
 
     // Function to get a new image when the times button is clicked
     function getNewImage(event) {
-      if ($(".check-btn").attr("style", "background-color:#6dda6dbd")) {
-        $(".check-btn").attr("style", "background-color: #464646a3");
+      if ($(checkBtnId).attr("style", "background-color:#6dda6dbd")) {
+        $(checkBtnId).attr("style", "background-color: #464646a3");
       }
       createImage();
     }
 
     // Event listeners
-    $(".check-btn").on("click", keepImage);
-    $(".times-btn").on("click", getNewImage);
+    $(checkBtnId).on("click", keepImage);
+    $(timesBtnId).on("click", getNewImage);
   });
 
   // AJAX call for Question 3
   $.ajax({
     url:
-      "https://api.pexels.com/v1/search?query=" + queryAnswers.questionThree.answers[0],
+      "https://api.pexels.com/v1/search?query=" +
+      queryAnswers.questionThree.answers[0],
     method: "GET",
     headers: { Authorization: APIkey },
   }).then(function (response) {
@@ -255,141 +268,143 @@ $(document).ready(function () {
     $(".times-btn").on("click", getNewImage);
   });
 
-// Question 4
-$.ajax({
-  url:
-    "https://api.pexels.com/v1/search?query=" + queryAnswers.questionFour.answers[0],
-  method: "GET",
-  headers: { Authorization: APIkey },
-}).then(function (response) {
-  // Variables
-  var div = $("#" + queryIds.questionFour.answers[0]);
-  var imageWrapper = $("#" + queryIds.questionFour.answers[0] + "-image");
-  var header = $("<h2>");
-  var checkBtn = $("<button>");
-  var timesBtn = $("<button>");
-  var questionFourDiv = $("#question-three");
-  var questionFour = $("<h2>");
-  // Function to create the image and the header
-  function createImage() {
-    imageWrapper.empty();
-    randomImage = Math.floor(Math.random() * response.photos.length);
-    // Add question header to the page
-    questionFour.text(queryQuestions[3]);
-    questionFourDiv.append(questionFour);
-    // Add answer header to the page
-    header.text(queryAnswers.questionFour.answers[0]);
-    imageWrapper.append(header);
-    div.append(imageWrapper);
-    // Create image and add it to the page
-    imageSource = response.photos[randomImage].src.original;
-    var generatedImage = $("<img>");
-    generatedImage.attr("src", imageSource);
-    generatedImage.addClass("image-choice");
-    imageWrapper.append(generatedImage);
-    div.append(imageWrapper);
-  }
-
-  function createButtons() {
-    // Create check button
-    checkBtn.addClass("btn check-btn");
-    var checkIcon = $("<i>");
-    checkIcon.addClass("fas fa-check-square fa-lg");
-    checkBtn.append(checkIcon);
-    // Create times button
-    timesBtn.addClass("btn times-btn");
-    var timesIcon = $("<i>");
-    timesIcon.addClass("fas fa-times-circle fa-lg");
-    timesBtn.append(timesIcon);
-  }
-  createButtons();
-
-  // Append buttons to the work div
-  div.append(checkBtn);
-  div.append(timesBtn);
-
-  createImage();
-
-  // Function to get a new image when the times button is clicked
-  function getNewImage(event) {
-    if ($(".check-btn").attr("style", "background-color:#6dda6dbd")) {
-      $(".check-btn").attr("style", "background-color: #464646a3");
+  // Question 4
+  $.ajax({
+    url:
+      "https://api.pexels.com/v1/search?query=" +
+      queryAnswers.questionFour.answers[0],
+    method: "GET",
+    headers: { Authorization: APIkey },
+  }).then(function (response) {
+    // Variables
+    var div = $("#" + queryIds.questionFour.answers[0]);
+    var imageWrapper = $("#" + queryIds.questionFour.answers[0] + "-image");
+    var header = $("<h2>");
+    var checkBtn = $("<button>");
+    var timesBtn = $("<button>");
+    var questionFourDiv = $("#question-three");
+    var questionFour = $("<h2>");
+    // Function to create the image and the header
+    function createImage() {
+      imageWrapper.empty();
+      randomImage = Math.floor(Math.random() * response.photos.length);
+      // Add question header to the page
+      questionFour.text(queryQuestions[3]);
+      questionFourDiv.append(questionFour);
+      // Add answer header to the page
+      header.text(queryAnswers.questionFour.answers[0]);
+      imageWrapper.append(header);
+      div.append(imageWrapper);
+      // Create image and add it to the page
+      imageSource = response.photos[randomImage].src.original;
+      var generatedImage = $("<img>");
+      generatedImage.attr("src", imageSource);
+      generatedImage.addClass("image-choice");
+      imageWrapper.append(generatedImage);
+      div.append(imageWrapper);
     }
-    createImage();
-  }
 
-  // Event listeners
-  $(".check-btn").on("click", keepImage);
-  $(".times-btn").on("click", getNewImage);
-});
-// Question 5
-$.ajax({
-  url:
-    "https://api.pexels.com/v1/search?query=" + queryAnswers.questionFive.answers[0],
-  method: "GET",
-  headers: { Authorization: APIkey },
-}).then(function (response) {
-  console.log(response);
-  // Variables
-  var div = $("#" + queryIds.questionFive.answers[0]);
-  var imageWrapper = $("#" + queryIds.questionFive.answers[0] + "-image");
-  var header = $("<h2>");
-  var checkBtn = $("<button>");
-  var timesBtn = $("<button>");
-  var questionFiveDiv = $("#question-five");
-  var questionFive = $("<h2>");
-  // Function to create the image and the header
-  function createImage() {
-    imageWrapper.empty();
-    randomImage = Math.floor(Math.random() * response.photos.length);
-    // Add question header to the page
-    questionFive.text(queryQuestions[4]);
-    questionFiveDiv.append(questionFive);
-    // Add answer header to the page
-    header.text(queryAnswers.questionFive.answers[0]);
-    imageWrapper.append(header);
-    div.append(imageWrapper);
-    // Create image and add it to the page
-    imageSource = response.photos[randomImage].src.original;
-    var generatedImage = $("<img>");
-    generatedImage.attr("src", imageSource);
-    generatedImage.addClass("image-choice");
-    imageWrapper.append(generatedImage);
-    div.append(imageWrapper);
-  }
-
-  function createButtons() {
-    // Create check button
-    checkBtn.addClass("btn check-btn");
-    var checkIcon = $("<i>");
-    checkIcon.addClass("fas fa-check-square fa-lg");
-    checkBtn.append(checkIcon);
-    // Create times button
-    timesBtn.addClass("btn times-btn");
-    var timesIcon = $("<i>");
-    timesIcon.addClass("fas fa-times-circle fa-lg");
-    timesBtn.append(timesIcon);
-  }
-  createButtons();
-
-  // Append buttons to the work div
-  div.append(checkBtn);
-  div.append(timesBtn);
-
-  createImage();
-
-  // Function to get a new image when the times button is clicked
-  function getNewImage(event) {
-    if ($(".check-btn").attr("style", "background-color:#6dda6dbd")) {
-      $(".check-btn").attr("style", "background-color: #464646a3");
+    function createButtons() {
+      // Create check button
+      checkBtn.addClass("btn check-btn");
+      var checkIcon = $("<i>");
+      checkIcon.addClass("fas fa-check-square fa-lg");
+      checkBtn.append(checkIcon);
+      // Create times button
+      timesBtn.addClass("btn times-btn");
+      var timesIcon = $("<i>");
+      timesIcon.addClass("fas fa-times-circle fa-lg");
+      timesBtn.append(timesIcon);
     }
-    createImage();
-  }
+    createButtons();
 
-  // Event listeners
-  $(".check-btn").on("click", keepImage);
-  $(".times-btn").on("click", getNewImage);
-});
+    // Append buttons to the work div
+    div.append(checkBtn);
+    div.append(timesBtn);
+
+    createImage();
+
+    // Function to get a new image when the times button is clicked
+    function getNewImage(event) {
+      if ($(".check-btn").attr("style", "background-color:#6dda6dbd")) {
+        $(".check-btn").attr("style", "background-color: #464646a3");
+      }
+      createImage();
+    }
+
+    // Event listeners
+    $(".check-btn").on("click", keepImage);
+    $(".times-btn").on("click", getNewImage);
+  });
+  // Question 5
+  $.ajax({
+    url:
+      "https://api.pexels.com/v1/search?query=" +
+      queryAnswers.questionFive.answers[0],
+    method: "GET",
+    headers: { Authorization: APIkey },
+  }).then(function (response) {
+    console.log(response);
+    // Variables
+    var div = $("#" + queryIds.questionFive.answers[0]);
+    var imageWrapper = $("#" + queryIds.questionFive.answers[0] + "-image");
+    var header = $("<h2>");
+    var checkBtn = $("<button>");
+    var timesBtn = $("<button>");
+    var questionFiveDiv = $("#question-five");
+    var questionFive = $("<h2>");
+    // Function to create the image and the header
+    function createImage() {
+      imageWrapper.empty();
+      randomImage = Math.floor(Math.random() * response.photos.length);
+      // Add question header to the page
+      questionFive.text(queryQuestions[4]);
+      questionFiveDiv.append(questionFive);
+      // Add answer header to the page
+      header.text(queryAnswers.questionFive.answers[0]);
+      imageWrapper.append(header);
+      div.append(imageWrapper);
+      // Create image and add it to the page
+      imageSource = response.photos[randomImage].src.original;
+      var generatedImage = $("<img>");
+      generatedImage.attr("src", imageSource);
+      generatedImage.addClass("image-choice");
+      imageWrapper.append(generatedImage);
+      div.append(imageWrapper);
+    }
+
+    function createButtons() {
+      // Create check button
+      checkBtn.addClass("btn check-btn");
+      var checkIcon = $("<i>");
+      checkIcon.addClass("fas fa-check-square fa-lg");
+      checkBtn.append(checkIcon);
+      // Create times button
+      timesBtn.addClass("btn times-btn");
+      var timesIcon = $("<i>");
+      timesIcon.addClass("fas fa-times-circle fa-lg");
+      timesBtn.append(timesIcon);
+    }
+    createButtons();
+
+    // Append buttons to the work div
+    div.append(checkBtn);
+    div.append(timesBtn);
+
+    createImage();
+
+    // Function to get a new image when the times button is clicked
+    function getNewImage(event) {
+      if ($(".check-btn").attr("style", "background-color:#6dda6dbd")) {
+        $(".check-btn").attr("style", "background-color: #464646a3");
+      }
+      createImage();
+    }
+
+    // Event listeners
+    $(".check-btn").on("click", keepImage);
+    $(".times-btn").on("click", getNewImage);
+  });
 });
 
 // If check  button color = #6dda6dbd, add to vision board
