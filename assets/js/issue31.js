@@ -1,14 +1,21 @@
 $(document).ready(function () {
-  function storeAnswer() {
+  // Function to select clicked answer
+  function selectAnswer() {
     if ($(this).hasClass("active")) {
       $(this).removeClass("active");
     } else if (!$(this).hasClass("active")) {
       $(this).addClass("active");
     }
-
+  }
+  
+  // Function to save answer to local storage
+  function storeAnswer() {
     console.log($(this));
     console.log($(this)[0].outerText);
-    console.log("You clicked an answer button!");
+    console.log("you clicked an answer Button!");
   }
-  $(".btn").on("click", storeAnswer);
+
+  // Event listeners
+  $(".btn").on("click", selectAnswer);
+  $("#nextBtn").on("click", storeAnswer);
 });
