@@ -15,7 +15,7 @@ $(document).ready(function () {
       answers: ["Travel", "Sports activities", "Go back to school"],
     },
     questionFive: {
-      answers: ["Money", "Family", "Helping others", "Fun"],
+      answers: ["Family", "work", "Helping others", "Fun"],
     },
   };
   var queryIds = {
@@ -32,7 +32,7 @@ $(document).ready(function () {
       answers: ["travel", "sports-activities", "go-back-to-school"],
     },
     questionFive: {
-      answers: ["money", "family", "helping-others", "fun"],
+      answers: ["family", "work", "helping-others", "fun"],
     },
   };
 
@@ -58,7 +58,6 @@ $(document).ready(function () {
     method: "GET",
     headers: { Authorization: APIkey },
   }).then(function (response) {
-    console.log(response);
     // Variables
     var div = $("#" + queryIds.questionOne.answers[0]);
     var imageWrapper = $("#" + queryIds.questionOne.answers[0] + "-image");
@@ -127,7 +126,6 @@ $(document).ready(function () {
     method: "GET",
     headers: { Authorization: APIkey },
   }).then(function (response) {
-    console.log(response);
     // Variables
     var div = $("#" + queryIds.questionTwo.answers[0]);
     var imageWrapper = $("#" + queryIds.questionTwo.answers[0] + "-image");
@@ -141,7 +139,7 @@ $(document).ready(function () {
       imageWrapper.empty();
       randomImage = Math.floor(Math.random() * response.photos.length);
       // Add question header to the page
-      questionTwo.text(queryQuestions[0]);
+      questionTwo.text(queryQuestions[1]);
       questionTwoDiv.append(questionTwo);
       // Add answer header to the page
       header.text(queryAnswers.questionTwo.answers[0]);
@@ -196,7 +194,6 @@ $(document).ready(function () {
     method: "GET",
     headers: { Authorization: APIkey },
   }).then(function (response) {
-    console.log(response);
     // Variables
     var div = $("#" + queryIds.questionThree.answers[0]);
     var imageWrapper = $("#" + queryIds.questionThree.answers[0] + "-image");
@@ -210,7 +207,7 @@ $(document).ready(function () {
       imageWrapper.empty();
       randomImage = Math.floor(Math.random() * response.photos.length);
       // Add question header to the page
-      questionThree.text(queryQuestions[0]);
+      questionThree.text(queryQuestions[2]);
       questionThreeDiv.append(questionThree);
       // Add answer header to the page
       header.text(queryAnswers.questionThree.answers[0]);
@@ -258,6 +255,141 @@ $(document).ready(function () {
     $(".times-btn").on("click", getNewImage);
   });
 
+// Question 4
+$.ajax({
+  url:
+    "https://api.pexels.com/v1/search?query=" + queryAnswers.questionFour.answers[0],
+  method: "GET",
+  headers: { Authorization: APIkey },
+}).then(function (response) {
+  // Variables
+  var div = $("#" + queryIds.questionFour.answers[0]);
+  var imageWrapper = $("#" + queryIds.questionFour.answers[0] + "-image");
+  var header = $("<h2>");
+  var checkBtn = $("<button>");
+  var timesBtn = $("<button>");
+  var questionFourDiv = $("#question-three");
+  var questionFour = $("<h2>");
+  // Function to create the image and the header
+  function createImage() {
+    imageWrapper.empty();
+    randomImage = Math.floor(Math.random() * response.photos.length);
+    // Add question header to the page
+    questionFour.text(queryQuestions[3]);
+    questionFourDiv.append(questionFour);
+    // Add answer header to the page
+    header.text(queryAnswers.questionFour.answers[0]);
+    imageWrapper.append(header);
+    div.append(imageWrapper);
+    // Create image and add it to the page
+    imageSource = response.photos[randomImage].src.original;
+    var generatedImage = $("<img>");
+    generatedImage.attr("src", imageSource);
+    generatedImage.addClass("image-choice");
+    imageWrapper.append(generatedImage);
+    div.append(imageWrapper);
+  }
+
+  function createButtons() {
+    // Create check button
+    checkBtn.addClass("btn check-btn");
+    var checkIcon = $("<i>");
+    checkIcon.addClass("fas fa-check-square fa-lg");
+    checkBtn.append(checkIcon);
+    // Create times button
+    timesBtn.addClass("btn times-btn");
+    var timesIcon = $("<i>");
+    timesIcon.addClass("fas fa-times-circle fa-lg");
+    timesBtn.append(timesIcon);
+  }
+  createButtons();
+
+  // Append buttons to the work div
+  div.append(checkBtn);
+  div.append(timesBtn);
+
+  createImage();
+
+  // Function to get a new image when the times button is clicked
+  function getNewImage(event) {
+    if ($(".check-btn").attr("style", "background-color:#6dda6dbd")) {
+      $(".check-btn").attr("style", "background-color: #464646a3");
+    }
+    createImage();
+  }
+
+  // Event listeners
+  $(".check-btn").on("click", keepImage);
+  $(".times-btn").on("click", getNewImage);
+});
+// Question 5
+$.ajax({
+  url:
+    "https://api.pexels.com/v1/search?query=" + queryAnswers.questionFive.answers[0],
+  method: "GET",
+  headers: { Authorization: APIkey },
+}).then(function (response) {
+  console.log(response);
+  // Variables
+  var div = $("#" + queryIds.questionFive.answers[0]);
+  var imageWrapper = $("#" + queryIds.questionFive.answers[0] + "-image");
+  var header = $("<h2>");
+  var checkBtn = $("<button>");
+  var timesBtn = $("<button>");
+  var questionFiveDiv = $("#question-five");
+  var questionFive = $("<h2>");
+  // Function to create the image and the header
+  function createImage() {
+    imageWrapper.empty();
+    randomImage = Math.floor(Math.random() * response.photos.length);
+    // Add question header to the page
+    questionFive.text(queryQuestions[4]);
+    questionFiveDiv.append(questionFive);
+    // Add answer header to the page
+    header.text(queryAnswers.questionFive.answers[0]);
+    imageWrapper.append(header);
+    div.append(imageWrapper);
+    // Create image and add it to the page
+    imageSource = response.photos[randomImage].src.original;
+    var generatedImage = $("<img>");
+    generatedImage.attr("src", imageSource);
+    generatedImage.addClass("image-choice");
+    imageWrapper.append(generatedImage);
+    div.append(imageWrapper);
+  }
+
+  function createButtons() {
+    // Create check button
+    checkBtn.addClass("btn check-btn");
+    var checkIcon = $("<i>");
+    checkIcon.addClass("fas fa-check-square fa-lg");
+    checkBtn.append(checkIcon);
+    // Create times button
+    timesBtn.addClass("btn times-btn");
+    var timesIcon = $("<i>");
+    timesIcon.addClass("fas fa-times-circle fa-lg");
+    timesBtn.append(timesIcon);
+  }
+  createButtons();
+
+  // Append buttons to the work div
+  div.append(checkBtn);
+  div.append(timesBtn);
+
+  createImage();
+
+  // Function to get a new image when the times button is clicked
+  function getNewImage(event) {
+    if ($(".check-btn").attr("style", "background-color:#6dda6dbd")) {
+      $(".check-btn").attr("style", "background-color: #464646a3");
+    }
+    createImage();
+  }
+
+  // Event listeners
+  $(".check-btn").on("click", keepImage);
+  $(".times-btn").on("click", getNewImage);
+});
 });
 
 // If check  button color = #6dda6dbd, add to vision board
