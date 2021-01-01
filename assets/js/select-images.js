@@ -67,6 +67,8 @@ $(document).ready(function () {
     var timesBtn = $("<button>");
     var questionOneDiv = $("#question-one");
     var questionOne = $("<h2>");
+    var checkBtnId = "#" + queryIds.questionOne.answers[0] + "-keep-btn";
+    var timesBtnId = "#" + queryIds.questionOne.answers[0] + "-remove-btn";
     // Function to create the image and the header
     function createImage() {
       imageWrapper.empty();
@@ -88,17 +90,26 @@ $(document).ready(function () {
     }
     function createButtons() {
       // Create check button
+      console.log(checkBtnId);
       checkBtn.addClass("btn check-btn");
+      checkBtn.attr("id", queryIds.questionOne.answers[0] + "-keep-btn");
       var checkIcon = $("<i>");
       checkIcon.addClass("fas fa-check-square fa-lg");
       checkBtn.append(checkIcon);
       // Create times button
       timesBtn.addClass("btn times-btn");
+      timesBtn.attr("id", queryIds.questionOne.answers[0] + "-remove-btn");
       var timesIcon = $("<i>");
       timesIcon.addClass("fas fa-times-circle fa-lg");
       timesBtn.append(timesIcon);
     }
     createButtons();
+
+    // Function to keep image
+    function keepImage(event) {
+      event.preventDefault();
+      $(checkBtnId).attr("style", "background-color:#6dda6dbd");
+    }
 
     // Append buttons to the work div
     div.append(checkBtn);
@@ -108,15 +119,15 @@ $(document).ready(function () {
 
     // Function to get a new image when the times button is clicked
     function getNewImage(event) {
-      if ($(".check-btn").attr("style", "background-color:#6dda6dbd")) {
-        $(".check-btn").attr("style", "background-color: #464646a3");
+      if ($(checkBtnId).attr("style", "background-color:#6dda6dbd")) {
+        $(checkBtnId).attr("style", "background-color: #464646a3");
       }
       createImage();
     }
 
     // Event listeners
-    $(".check-btn").on("click", keepImage);
-    $(".times-btn").on("click", getNewImage);
+    $(checkBtnId).on("click", keepImage);
+    $(timesBtnId).on("click", getNewImage);
   });
 
   // AJAX call for Question 2
@@ -167,7 +178,7 @@ $(document).ready(function () {
       checkBtn.append(checkIcon);
       // Create times button
       timesBtn.addClass("btn times-btn");
-      timesBtn.attr("id", queryIds.questionTwo.answers[0] + "-remove-btn")
+      timesBtn.attr("id", queryIds.questionTwo.answers[0] + "-remove-btn");
       var timesIcon = $("<i>");
       timesIcon.addClass("fas fa-times-circle fa-lg");
       timesBtn.append(timesIcon);
@@ -215,6 +226,8 @@ $(document).ready(function () {
     var timesBtn = $("<button>");
     var questionThreeDiv = $("#question-three");
     var questionThree = $("<h2>");
+    var checkBtnId = "#" + queryIds.questionThree.answers[0] + "-keep-btn";
+    var timesBtnId = "#" + queryIds.questionThree.answers[0] + "-remove-btn";
     // Function to create the image and the header
     function createImage() {
       imageWrapper.empty();
@@ -237,17 +250,26 @@ $(document).ready(function () {
 
     function createButtons() {
       // Create check button
+      console.log(checkBtnId);
       checkBtn.addClass("btn check-btn");
+      checkBtn.attr("id", queryIds.questionThree.answers[0] + "-keep-btn");
       var checkIcon = $("<i>");
       checkIcon.addClass("fas fa-check-square fa-lg");
       checkBtn.append(checkIcon);
       // Create times button
       timesBtn.addClass("btn times-btn");
+      timesBtn.attr("id", queryIds.questionThree.answers[0] + "-remove-btn");
       var timesIcon = $("<i>");
       timesIcon.addClass("fas fa-times-circle fa-lg");
       timesBtn.append(timesIcon);
     }
     createButtons();
+
+    // Function to keep image
+    function keepImage(event) {
+      event.preventDefault();
+      $(checkBtnId).attr("style", "background-color:#6dda6dbd");
+    }
 
     // Append buttons to the work div
     div.append(checkBtn);
@@ -257,15 +279,15 @@ $(document).ready(function () {
 
     // Function to get a new image when the times button is clicked
     function getNewImage(event) {
-      if ($(".check-btn").attr("style", "background-color:#6dda6dbd")) {
-        $(".check-btn").attr("style", "background-color: #464646a3");
+      if ($(checkBtnId).attr("style", "background-color:#6dda6dbd")) {
+        $(checkBtnId).attr("style", "background-color: #464646a3");
       }
       createImage();
     }
 
     // Event listeners
-    $(".check-btn").on("click", keepImage);
-    $(".times-btn").on("click", getNewImage);
+    $(checkBtnId).on("click", keepImage);
+    $(timesBtnId).on("click", getNewImage);
   });
 
   // Question 4
@@ -284,6 +306,8 @@ $(document).ready(function () {
     var timesBtn = $("<button>");
     var questionFourDiv = $("#question-three");
     var questionFour = $("<h2>");
+    var checkBtnId = "#" + queryIds.questionFour.answers[0] + "-keep-btn";
+    var timesBtnId = "#" + queryIds.questionFour.answers[0] + "-remove-btn";
     // Function to create the image and the header
     function createImage() {
       imageWrapper.empty();
@@ -306,17 +330,26 @@ $(document).ready(function () {
 
     function createButtons() {
       // Create check button
+      console.log(checkBtnId);
       checkBtn.addClass("btn check-btn");
+      checkBtn.attr("id", queryIds.questionFour.answers[0] + "-keep-btn");
       var checkIcon = $("<i>");
       checkIcon.addClass("fas fa-check-square fa-lg");
       checkBtn.append(checkIcon);
       // Create times button
       timesBtn.addClass("btn times-btn");
+      timesBtn.attr("id", queryIds.questionFour.answers[0] + "-remove-btn");
       var timesIcon = $("<i>");
       timesIcon.addClass("fas fa-times-circle fa-lg");
       timesBtn.append(timesIcon);
     }
     createButtons();
+
+    // Function to keep image
+    function keepImage(event) {
+      event.preventDefault();
+      $(checkBtnId).attr("style", "background-color:#6dda6dbd");
+    }
 
     // Append buttons to the work div
     div.append(checkBtn);
@@ -326,15 +359,15 @@ $(document).ready(function () {
 
     // Function to get a new image when the times button is clicked
     function getNewImage(event) {
-      if ($(".check-btn").attr("style", "background-color:#6dda6dbd")) {
-        $(".check-btn").attr("style", "background-color: #464646a3");
+      if ($(checkBtnId).attr("style", "background-color:#6dda6dbd")) {
+        $(checkBtnId).attr("style", "background-color: #464646a3");
       }
       createImage();
     }
 
     // Event listeners
-    $(".check-btn").on("click", keepImage);
-    $(".times-btn").on("click", getNewImage);
+    $(checkBtnId).on("click", keepImage);
+    $(timesBtnId).on("click", getNewImage);
   });
   // Question 5
   $.ajax({
@@ -353,6 +386,8 @@ $(document).ready(function () {
     var timesBtn = $("<button>");
     var questionFiveDiv = $("#question-five");
     var questionFive = $("<h2>");
+    var checkBtnId = "#" + queryIds.questionFive.answers[0] + "-keep-btn";
+    var timesBtnId = "#" + queryIds.questionFive.answers[0] + "-remove-btn";
     // Function to create the image and the header
     function createImage() {
       imageWrapper.empty();
@@ -375,17 +410,26 @@ $(document).ready(function () {
 
     function createButtons() {
       // Create check button
+      console.log(checkBtnId);
       checkBtn.addClass("btn check-btn");
+      checkBtn.attr("id", queryIds.questionFive.answers[0] + "-keep-btn");
       var checkIcon = $("<i>");
       checkIcon.addClass("fas fa-check-square fa-lg");
       checkBtn.append(checkIcon);
       // Create times button
       timesBtn.addClass("btn times-btn");
+      timesBtn.attr("id", queryIds.questionFive.answers[0] + "-remove-btn");
       var timesIcon = $("<i>");
       timesIcon.addClass("fas fa-times-circle fa-lg");
       timesBtn.append(timesIcon);
     }
     createButtons();
+
+    // Function to keep image
+    function keepImage(event) {
+      event.preventDefault();
+      $(checkBtnId).attr("style", "background-color:#6dda6dbd");
+    }
 
     // Append buttons to the work div
     div.append(checkBtn);
@@ -395,15 +439,15 @@ $(document).ready(function () {
 
     // Function to get a new image when the times button is clicked
     function getNewImage(event) {
-      if ($(".check-btn").attr("style", "background-color:#6dda6dbd")) {
-        $(".check-btn").attr("style", "background-color: #464646a3");
+      if ($(checkBtnId).attr("style", "background-color:#6dda6dbd")) {
+        $(checkBtnId).attr("style", "background-color: #464646a3");
       }
       createImage();
     }
 
     // Event listeners
-    $(".check-btn").on("click", keepImage);
-    $(".times-btn").on("click", getNewImage);
+    $(checkBtnId).on("click", keepImage);
+    $(timesBtnId).on("click", getNewImage);
   });
 });
 
