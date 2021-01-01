@@ -30,7 +30,7 @@ button {
 	margin: 10px;
 }
 
-button:hover {
+.active, button:hover {
 	background-color: #374785 !important;
 	color: #f76c6c !important;
 }
