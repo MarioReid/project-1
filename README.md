@@ -1,6 +1,7 @@
 # Visualize
 
 ## Description 
+View the deployed application here: https://marioreid.github.io/project-1/
 
 ## Table of Contents
 
