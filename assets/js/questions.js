@@ -82,26 +82,29 @@ $(document).ready(function () {
       window.location = "finalpage.html";
     }
     $(".btn").removeClass("active");
+    selectedAnswers = [];
   });
 
   // Function to select clicked answer
   function selectAnswer(event) {
-      var answerText = $(this)[0].outerText;
-      console.log(answerText);
-      var question = $("h1")[0].innerText;
-      console.log(question);
-      console.log($(this));
-        if ($(this).hasClass("active")) {
-          $(this).removeClass("active");
-          selectedAnswers.splice(answerText);
-        } else if (!$(this).hasClass("active")) {
-          $(this).addClass("active");
-          selectedAnswers.push(answerText);
-          localStorage.setItem(question, selectedAnswers);
-          console.log(selectedAnswers);
-        }
+    var answerText = $(this)[0].outerText;
+    var question = $("h1")[0].innerText;
+    if ($(this).hasClass("active")) {
+      $(this).removeClass("active");
+      selectedAnswers.splice(answerText);
+    } else if (!$(this).hasClass("active")) {
+      $(this).addClass("active");
+      selectedAnswers.push(answerText);
+      localStorage.setItem(question, selectedAnswers);
+      console.log(selectedAnswers);
     }
-  
+    // selectedAnswers.forEach((answerChoice) => {
+    // if (!$(this).includes(answerChoice)) {
+    //     selectedAnswers.push(anwerChoice);
+    //   }
+    // };
+  }
+
   // Event listeners
   $(".btn").on("click", selectAnswer);
 });
