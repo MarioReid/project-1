@@ -53,8 +53,11 @@ $(document).ready(function () {
   var num = 0;
 
   // Variables for local storage
-  var queryKeywords = JSON.stringify(localStorage.getItem(queryQuestions.questions[0])) || [];
-  console.log(queryKeywords);
+  var stringifiedKeywords = JSON.stringify(localStorage.getItem(queryQuestions.questions[0])) || [];
+  var keywords = JSON.parse(stringifiedKeywords.toLowerCase());
+  var keywordsArray= [];
+  keywordsArray.push(keywords);
+  console.log(keywordsArray);
 
   // Ajax call for question one
   for (i = 0; i < queryAnswers.questionOne.answers.length; i++) {
