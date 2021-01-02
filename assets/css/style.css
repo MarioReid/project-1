@@ -45,6 +45,15 @@ button:hover {
 	color: #f76c6c !important;
 }
 
+.jumbotron {
+	margin: 0 auto;
+	background-color: #24305E;
+	border-radius: 5px;
+	color:#A8D0E6;
+	max-width: 800px;
+	padding: 80px;
+  }
+
 #buttonsContainer {
 	display: flex;
 	align-items: center;
