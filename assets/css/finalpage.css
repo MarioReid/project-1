@@ -1,30 +1,11 @@
-body   {
-    background-color: #A8D0E6;
-}
-
 .container {
     margin-bottom: 40px;
 }
 
-#sub-title {
-    font-size: 20px;
-}
-
-.jumbotron {
-  margin: 0 auto;
-  text-align: center;
-  background-color: #F8E9A1;
-
-  border-radius: 5px;
-  color: #374785;
-  max-width: 800px;
-  padding: 50px;
-}
 .btn {
     background-color:#F75C6C;
     padding: 12px 24px;
     float: right;
     margin-top: 5px;
     width: 70px;
-
 }
