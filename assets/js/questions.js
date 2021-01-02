@@ -78,7 +78,10 @@ $(document).ready(function () {
       $(option2).text(queryAnswers.questionFive.answers[1]);
       $(option3).text(queryAnswers.questionFive.answers[2]);
       $(option4).text(queryAnswers.questionFive.answers[3]);
-    } else {
+    } else if (!$(".option-btn").hasClass("active")){
+      console.log("There are no active buttons.")
+    }
+    else {
       window.location = "select-images.html";
     }
     $(".btn").removeClass("active");
