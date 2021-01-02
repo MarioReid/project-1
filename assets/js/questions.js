@@ -79,7 +79,7 @@ $(document).ready(function () {
       $(option3).text(queryAnswers.questionFive.answers[2]);
       $(option4).text(queryAnswers.questionFive.answers[3]);
     } else {
-      window.location = "finalpage.html";
+      window.location = "select-images.html";
     }
     $(".btn").removeClass("active");
     selectedAnswers = [];
