@@ -80,6 +80,7 @@ $(document).ready(function () {
       $(option4).text(queryAnswers.questionFive.answers[3]);
     } else if (!$(".option-btn").hasClass("active")){
       console.log("There are no active buttons.")
+      window.location="redirect.html"
     }
     else {
       window.location = "select-images.html";
