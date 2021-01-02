@@ -76,7 +76,7 @@ $(document).ready(function () {
       $(option2).text(queryAnswers.questionFive.answers[1]);
       $(option3).text(queryAnswers.questionFive.answers[2]);
       $(option4).text(queryAnswers.questionFive.answers[3]);
-    } else if (localStorage !== null) {
+    } else if (localStorage === null) {
       console.log("You didn't click any buttons!");
       window.location="redirect.html";
     }
