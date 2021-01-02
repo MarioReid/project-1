@@ -76,10 +76,17 @@ $(document).ready(function () {
       $(option3).text(queryAnswers.questionFive.answers[2]);
       $(option4).text(queryAnswers.questionFive.answers[3]);
     } 
+
     else if (localStorage !== null){
       console.log("You didn't click any buttons!")
       // window.location="redirect.html"
     }
+
+    // else if (!$(".option-btn").hasClass("active")){
+    //   console.log("There are no active buttons.")
+    //   window.location="redirect.html"
+    // }
+
     else {
       window.location = "select-images.html";
     }

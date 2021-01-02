@@ -52,7 +52,7 @@ h2 {
 }
 
 .check-btn {
-  background-color:#464646a3;
+  background-color:#464646a3 !important;
   position: absolute;
   top: 40%;
   left: 20%;
@@ -68,7 +68,7 @@ h2 {
 
 
 .times-btn {
-  background-color:#464646a3;
+  background-color:#464646a3 !important;
   position: absolute;
   top: 40%;
   left: 80%;
