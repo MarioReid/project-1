@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  localStorage.clear();
   //get dom variables
 
   //determines which button is clicked
@@ -53,9 +54,7 @@ $(document).ready(function () {
 
   $(btnNext).click(function (event) {
     event.preventDefault();
-    // console.log("help");
     count++;
-    console.log("count:" + count);
     $(qContainer).text(queryQuestions.questions[count]);
     if (count == 1) {
       $(option1).text(queryAnswers.questionTwo.answers[0]);
@@ -68,7 +67,6 @@ $(document).ready(function () {
       $(option3).text(queryAnswers.questionThree.answers[2]);
       $(option4).text(queryAnswers.questionThree.answers[3]);
     } else if (count == 3) {
-      console.log("made it to 3");
       $(option1).text(queryAnswers.questionFour.answers[0]);
       $(option2).text(queryAnswers.questionFour.answers[1]);
       $(option3).text(queryAnswers.questionFour.answers[2]);
@@ -101,7 +99,6 @@ $(document).ready(function () {
       $(this).addClass("active");
       selectedAnswers.push(answerText);
       localStorage.setItem(question, selectedAnswers);
-      console.log(selectedAnswers);
     }
     // selectedAnswers.forEach((answerChoice) => {
     // if (!$(this).includes(answerChoice)) {
