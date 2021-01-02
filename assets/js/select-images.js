@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // Variables
-  var APIkey = "563492ad6f91700001000001b70fb799bff84ca4b8a69bfeb2fb60e3";
+  var APIkey = "563492ad6f91700001000001976c9517bf874507bcc729cac0319f27";
   var queryAnswers = {
     questionOne: {
       answers: ["Work", "School", "Relationships", "Health"],
@@ -50,13 +50,15 @@ $(document).ready(function () {
 
   var i;
   var count = 0;
+  var num = 0;
 
   // Ajax call for question one
   for (i = 0; i < queryAnswers.questionOne.answers.length; i++) {
-    var test = queryAnswers.questionOne.answers[count];
-
+    var test = queryAnswers.questionOne.answers[num];
+    num++;
+    var queryUrl = "https://api.pexels.com/v1/search?query=" + test;
     $.ajax({
-      url: "https://api.pexels.com/v1/search?query=" + test,
+      url: queryUrl,
       method: "GET",
       headers: { Authorization: APIkey },
     }).then(function (response) {
