@@ -53,23 +53,23 @@ $(document).ready(function () {
 		count++;
 		console.log("count:" + count);
 		$(qContainer).text(queryQuestions.questions[count]);
-		if ((count = 1)) {
+		if (count == 1) {
 			$(option1).text(queryAnswers.questionTwo.answers[0]);
 			$(option2).text(queryAnswers.questionTwo.answers[1]);
 			$(option3).text(queryAnswers.questionTwo.answers[2]);
 			$(option4).text(queryAnswers.questionTwo.answers[3]);
-		} else if ((count = 2)) {
+		} else if (count == 2) {
 			$(option1).text(queryAnswers.questionThree.answers[0]);
 			$(option2).text(queryAnswers.questionThree.answers[1]);
 			$(option3).text(queryAnswers.questionThree.answers[2]);
 			$(option4).text(queryAnswers.questionThree.answers[3]);
-		} else if ((count = 3)) {
+		} else if (count == 3) {
 			console.log("made it to 3");
 			$(option1).text(queryAnswers.questionFour.answers[0]);
 			$(option2).text(queryAnswers.questionFour.answers[1]);
 			$(option3).text(queryAnswers.questionFour.answers[2]);
 			$(option4).text(queryAnswers.questionFour.answers[3]);
-		} else if ((count = 4)) {
+		} else if (count == 4) {
 			$(option1).text(queryAnswers.questionFive.answers[0]);
 			$(option2).text(queryAnswers.questionFive.answers[1]);
 			$(option3).text(queryAnswers.questionFive.answers[2]);
