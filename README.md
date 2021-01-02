@@ -5,7 +5,17 @@
 View the deployed application here: https://marioreid.github.io/project-1/
 
 ## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
 
+## Installation
+1. Go to the [GitHub repository for Visualize](https://github.com/MarioReid/project-1/issues).
+2. Click the green **Code** button.
+3. Copy the SSH key.
+4. In your terminal, go into the directory that you want to host Visualize.
+5. Use the command **git clone [insert SSH key URL]** and click **Enter** (*Requires Git*).
 ## Usage
 
 ## Credits
@@ -15,6 +25,7 @@ The following people contributed to the success of this application. You can vie
 * [Jeana Rose Mathis](https://github.com/jeanarose)
 * [Jonathan Watson](https://github.com/jonathanjwatson) 
 * [Peter Colella](https://github.com/petercolella)
+* [Joem Casusi](https://github.com/jmccasusi)
 
 The following sites were used to find code to make Visualize function properly:
 * [W3Schools:](https://www.w3schools.com/howto/howto_css_button_on_image.asp) How to add a button on an image
