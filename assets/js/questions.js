@@ -1,5 +1,6 @@
 $(document).ready(function () {
   //get dom variables
+  localStorage.clear();
 
   //determines which button is clicked
   var option1 = $("#option1");
@@ -75,18 +76,10 @@ $(document).ready(function () {
       $(option2).text(queryAnswers.questionFive.answers[1]);
       $(option3).text(queryAnswers.questionFive.answers[2]);
       $(option4).text(queryAnswers.questionFive.answers[3]);
-    } 
-
-    else if (localStorage !== null){
-      console.log("You didn't click any buttons!")
-      // window.location="redirect.html"
+    } else if (localStorage !== null) {
+      console.log("You didn't click any buttons!");
+      window.location="redirect.html";
     }
-
-    // else if (!$(".option-btn").hasClass("active")){
-    //   console.log("There are no active buttons.")
-    //   window.location="redirect.html"
-    // }
-
     else {
       window.location = "select-images.html";
     }
