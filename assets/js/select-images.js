@@ -18,7 +18,7 @@ $(document).ready(function () {
       answers: ["Family", "work", "Helping others", "Fun"],
     },
   };
-  
+
   var queryQuestions = {
     questions: [
       "What areas of your life do you want to change?",
@@ -49,7 +49,8 @@ $(document).ready(function () {
     var query = keywordsOneArr[questionOne];
     console.log(query);
     questionOne++;
-    var queryUrl = "https://api.pexels.com/v1/search?per_page=50&query=" + query;
+    var queryUrl =
+      "https://api.pexels.com/v1/search?per_page=50&query=" + query;
     $.ajax({
       url: queryUrl,
       method: "GET",
@@ -127,7 +128,7 @@ $(document).ready(function () {
       counterOne++;
     });
   }
- 
+
   // Variables for local storage for question two
   var keywordsTwo = localStorage
     .getItem(queryQuestions.questions[1])
@@ -140,7 +141,6 @@ $(document).ready(function () {
 
   // // AJAX call for Question 2
   for (i = 0; i < keywordsTwoArr.length; i++) {
-
     var query = keywordsTwoArr[questionTwo];
     console.log(query);
     questionTwo++;
@@ -223,84 +223,98 @@ $(document).ready(function () {
   }
 
   // // AJAX call for Question 3
-  // $.ajax({
-  //   url:
-  //     "https://api.pexels.com/v1/search?query=" +
-  //     queryAnswers.questionThree.answers[0],
-  //   method: "GET",
-  //   headers: { Authorization: APIkey },
-  // }).then(function (response) {
-  //   // Variables
-  //   var div = $("#" + queryIds.questionThree.answers[0]);
-  //   var imageWrapper = $("#" + queryIds.questionThree.answers[0] + "-image");
-  //   var header = $("<h2>");
-  //   var checkBtn = $("<button>");
-  //   var timesBtn = $("<button>");
-  //   var questionThreeDiv = $("#question-three");
-  //   var questionThree = $("<h2>");
-  //   var checkBtnId = "#" + queryIds.questionThree.answers[0] + "-keep-btn";
-  //   var timesBtnId = "#" + queryIds.questionThree.answers[0] + "-remove-btn";
-  //   // Function to create the image and the header
-  //   function createImage() {
-  //     imageWrapper.empty();
-  //     randomImage = Math.floor(Math.random() * response.photos.length);
-  //     // Add question header to the page
-  //     questionThree.text(queryQuestions[2]);
-  //     questionThreeDiv.append(questionThree);
-  //     // Add answer header to the page
-  //     header.text(queryAnswers.questionThree.answers[0]);
-  //     imageWrapper.append(header);
-  //     div.append(imageWrapper);
-  //     // Create image and add it to the page
-  //     imageSource = response.photos[randomImage].src.original;
-  //     var generatedImage = $("<img>");
-  //     generatedImage.attr("src", imageSource);
-  //     generatedImage.addClass("image-choice");
-  //     imageWrapper.append(generatedImage);
-  //     div.append(imageWrapper);
-  //   }
+  // Variables for local storage for question two
+  var keywordsThree = localStorage
+    .getItem(queryQuestions.questions[2])
+    .toLowerCase();
+  var keywordsThreeArr = keywordsThree.split(",");
+  keywordsThreeArr.pop();
 
-  //   function createButtons() {
-  //     // Create check button
-  //     console.log(checkBtnId);
-  //     checkBtn.addClass("btn check-btn");
-  //     checkBtn.attr("id", queryIds.questionThree.answers[0] + "-keep-btn");
-  //     var checkIcon = $("<i>");
-  //     checkIcon.addClass("fas fa-check-square fa-lg");
-  //     checkBtn.append(checkIcon);
-  //     // Create times button
-  //     timesBtn.addClass("btn times-btn");
-  //     timesBtn.attr("id", queryIds.questionThree.answers[0] + "-remove-btn");
-  //     var timesIcon = $("<i>");
-  //     timesIcon.addClass("fas fa-times-circle fa-lg");
-  //     timesBtn.append(timesIcon);
-  //   }
-  //   createButtons();
+  var questionThree = 0;
+  var counterThree = 0;
 
-  //   // Function to keep image
-  //   function keepImage(event) {
-  //     event.preventDefault();
-  //     $(checkBtnId).attr("style", "background-color:#6dda6dbd");
-  //   }
+  // // AJAX call for Question 2
+  for (i = 0; i < keywordsThreeArr.length; i++) {
+    var query = keywordsThreeArr[questionThree];
+    console.log(query);
+    questionThree++;
+    var queryUrl = "https://api.pexels.com/v1/search?query=" + query;
+    $.ajax({
+      url: queryUrl,
+      method: "GET",
+      headers: { Authorization: APIkey },
+    }).then(function (response) {
+      // Variables
+      var div = $("#" + keywordsThreeArr[counterThree]);
+      var imageWrapper = $("#" + keywordsThreeArr[counterThree] + "-image");
+      var header = $("<h2>");
+      var checkBtn = $("<button>");
+      var timesBtn = $("<button>");
+      // var questionOneDiv = $("#question-one");
+      // var questionOne = $("<h2>");
+      var checkBtnId = "#" + keywordsThreeArr[counterThree] + "-keep-btn";
+      var timesBtnId = "#" + keywordsThreeArr[counterThree] + "-remove-btn";
+      // Function to create the image and the header
+      function createImage() {
+        imageWrapper.empty();
+        randomImage = Math.floor(Math.random() * response.photos.length);
+        // Add question header to the page
+        // questionOne.text(queryQuestions.questions[0]);
+        // questionOneDiv.append(questionOne);
+        // Add work header to the page
+        header.text(keywordsThreeArr[counterThree]);
+        imageWrapper.append(header);
+        div.append(imageWrapper);
+        // Create image and add it to the page
+        imageSource = response.photos[randomImage].src.original;
+        var generatedImage = $("<img>");
+        generatedImage.attr("src", imageSource);
+        generatedImage.addClass("image-choice");
+        imageWrapper.append(generatedImage);
+        div.append(imageWrapper);
+      }
+      function createButtons() {
+        // Create check button
+        checkBtn.addClass("btn check-btn");
+        checkBtn.attr("id", keywordsThreeArr[counterThree] + "-keep-btn");
+        var checkIcon = $("<i>");
+        checkIcon.addClass("fas fa-check-square fa-lg");
+        checkBtn.append(checkIcon);
+        // Create times button
+        timesBtn.addClass("btn times-btn");
+        timesBtn.attr("id", keywordsThreeArr[counterThree] + "-remove-btn");
+        var timesIcon = $("<i>");
+        timesIcon.addClass("fas fa-times-circle fa-lg");
+        timesBtn.append(timesIcon);
+      }
+      createButtons();
 
-  //   // Append buttons to the work div
-  //   div.append(checkBtn);
-  //   div.append(timesBtn);
+      // Function to keep image
+      function keepImage(event) {
+        event.preventDefault();
+        $(checkBtnId).attr("style", "background-color:#6dda6dbd !important");
+      }
 
-  //   createImage();
+      // Append buttons to the work div
+      div.append(checkBtn);
+      div.append(timesBtn);
 
-  //   // Function to get a new image when the times button is clicked
-  //   function getNewImage(event) {
-  //     if ($(checkBtnId).attr("style", "background-color:#6dda6dbd")) {
-  //       $(checkBtnId).attr("style", "background-color: #464646a3");
-  //     }
-  //     createImage();
-  //   }
+      createImage();
 
-  //   // Event listeners
-  //   $(checkBtnId).on("click", keepImage);
-  //   $(timesBtnId).on("click", getNewImage);
-  // });
+      // Function to get a new image when the times button is clicked
+      function getNewImage(event) {
+        if ($(checkBtnId).attr("style", "background-color:#6dda6dbd")) {
+          $(checkBtnId).attr("style", "background-color: #464646a3");
+        }
+        createImage();
+      }
+
+      // Event listeners
+      $(checkBtnId).on("click", keepImage);
+      $(timesBtnId).on("click", getNewImage);
+      counterThree++;
+    });
+  }
 
   // // Question 4
   // $.ajax({
