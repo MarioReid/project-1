@@ -32,8 +32,8 @@ $(document).ready(function () {
   var randomImage;
 
   var i;
-  var count = 0;
-  var num = 0;
+  var counterOne = 0;
+  var questionOne = 0;
 
   // Variables for local storage for question one
   var keywordsOne = localStorage
@@ -46,25 +46,26 @@ $(document).ready(function () {
 
   // Ajax call for question one
   for (i = 0; i < keywordsOneArr.length; i++) {
-    var query = keywordsOneArr[num];
+    var query = keywordsOneArr[questionOne];
     console.log(query);
-    num++;
-    var queryUrl = "https://api.pexels.com/v1/search?query=" + query;
+    questionOne++;
+    var queryUrl = "https://api.pexels.com/v1/search?per_page=50&query=" + query;
     $.ajax({
       url: queryUrl,
       method: "GET",
       headers: { Authorization: APIkey },
     }).then(function (response) {
+      console.log(response);
       // Variables
-      var div = $("#" + keywordsOneArr[count]);
-      var imageWrapper = $("#" + keywordsOneArr[count] + "-image");
+      var div = $("#" + keywordsOneArr[counterOne]);
+      var imageWrapper = $("#" + keywordsOneArr[counterOne] + "-image");
       var header = $("<h2>");
       var checkBtn = $("<button>");
       var timesBtn = $("<button>");
       // var questionOneDiv = $("#question-one");
       // var questionOne = $("<h2>");
-      var checkBtnId = "#" + keywordsOneArr[count] + "-keep-btn";
-      var timesBtnId = "#" + keywordsOneArr[count] + "-remove-btn";
+      var checkBtnId = "#" + keywordsOneArr[counterOne] + "-keep-btn";
+      var timesBtnId = "#" + keywordsOneArr[counterOne] + "-remove-btn";
       // Function to create the image and the header
       function createImage() {
         imageWrapper.empty();
@@ -73,7 +74,7 @@ $(document).ready(function () {
         // questionOne.text(queryQuestions.questions[0]);
         // questionOneDiv.append(questionOne);
         // Add work header to the page
-        header.text(keywordsOneArr[count]);
+        header.text(keywordsOneArr[counterOne]);
         imageWrapper.append(header);
         div.append(imageWrapper);
         // Create image and add it to the page
@@ -87,13 +88,13 @@ $(document).ready(function () {
       function createButtons() {
         // Create check button
         checkBtn.addClass("btn check-btn");
-        checkBtn.attr("id", keywordsOneArr[count] + "-keep-btn");
+        checkBtn.attr("id", keywordsOneArr[counterOne] + "-keep-btn");
         var checkIcon = $("<i>");
         checkIcon.addClass("fas fa-check-square fa-lg");
         checkBtn.append(checkIcon);
         // Create times button
         timesBtn.addClass("btn times-btn");
-        timesBtn.attr("id", keywordsOneArr[count] + "-remove-btn");
+        timesBtn.attr("id", keywordsOneArr[counterOne] + "-remove-btn");
         var timesIcon = $("<i>");
         timesIcon.addClass("fas fa-times-circle fa-lg");
         timesBtn.append(timesIcon);
@@ -123,12 +124,10 @@ $(document).ready(function () {
       // Event listeners
       $(checkBtnId).on("click", keepImage);
       $(timesBtnId).on("click", getNewImage);
-      count++;
+      counterOne++;
     });
   }
-  // var i;
-  // var count = 0;
-  // var num = 0;
+ 
   // Variables for local storage for question two
   var keywordsTwo = localStorage
     .getItem(queryQuestions.questions[1])
@@ -136,11 +135,15 @@ $(document).ready(function () {
   var keywordsTwoArr = keywordsTwo.split(",");
   keywordsTwoArr.pop();
 
+  var questionTwo = 0;
+  var counterTwo = 0;
+
   // // AJAX call for Question 2
   for (i = 0; i < keywordsTwoArr.length; i++) {
-    var query = keywordsTwoArr[num];
+
+    var query = keywordsTwoArr[questionTwo];
     console.log(query);
-    num++;
+    questionTwo++;
     var queryUrl = "https://api.pexels.com/v1/search?query=" + query;
     $.ajax({
       url: queryUrl,
@@ -148,15 +151,15 @@ $(document).ready(function () {
       headers: { Authorization: APIkey },
     }).then(function (response) {
       // Variables
-      var div = $("#" + keywordsTwoArr[count]);
-      var imageWrapper = $("#" + keywordsTwoArr[count] + "-image");
+      var div = $("#" + keywordsTwoArr[counterTwo]);
+      var imageWrapper = $("#" + keywordsTwoArr[counterTwo] + "-image");
       var header = $("<h2>");
       var checkBtn = $("<button>");
       var timesBtn = $("<button>");
       // var questionOneDiv = $("#question-one");
       // var questionOne = $("<h2>");
-      var checkBtnId = "#" + keywordsTwoArr[count] + "-keep-btn";
-      var timesBtnId = "#" + keywordsTwoArr[count] + "-remove-btn";
+      var checkBtnId = "#" + keywordsTwoArr[counterTwo] + "-keep-btn";
+      var timesBtnId = "#" + keywordsTwoArr[counterTwo] + "-remove-btn";
       // Function to create the image and the header
       function createImage() {
         imageWrapper.empty();
@@ -165,7 +168,7 @@ $(document).ready(function () {
         // questionOne.text(queryQuestions.questions[0]);
         // questionOneDiv.append(questionOne);
         // Add work header to the page
-        header.text(keywordsTwoArr[count]);
+        header.text(keywordsTwoArr[counterTwo]);
         imageWrapper.append(header);
         div.append(imageWrapper);
         // Create image and add it to the page
@@ -179,13 +182,13 @@ $(document).ready(function () {
       function createButtons() {
         // Create check button
         checkBtn.addClass("btn check-btn");
-        checkBtn.attr("id", keywordsTwoArr[count] + "-keep-btn");
+        checkBtn.attr("id", keywordsTwoArr[counterTwo] + "-keep-btn");
         var checkIcon = $("<i>");
         checkIcon.addClass("fas fa-check-square fa-lg");
         checkBtn.append(checkIcon);
         // Create times button
         timesBtn.addClass("btn times-btn");
-        timesBtn.attr("id", keywordsTwoArr[count] + "-remove-btn");
+        timesBtn.attr("id", keywordsTwoArr[counterTwo] + "-remove-btn");
         var timesIcon = $("<i>");
         timesIcon.addClass("fas fa-times-circle fa-lg");
         timesBtn.append(timesIcon);
@@ -215,7 +218,7 @@ $(document).ready(function () {
       // Event listeners
       $(checkBtnId).on("click", keepImage);
       $(timesBtnId).on("click", getNewImage);
-      count++;
+      counterTwo++;
     });
   }
 
