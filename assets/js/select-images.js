@@ -1,6 +1,11 @@
 $(document).ready(function () {
   // Variables
-  var APIkey = "563492ad6f9170000100000112de21acddfb45349d452259a36f012a";
+  // API keys:
+  // 563492ad6f91700001000001b70fb799bff84ca4b8a69bfeb2fb60e3
+  // 563492ad6f9170000100000112de21acddfb45349d452259a36f012a
+  // 563492ad6f91700001000001976c9517bf874507bcc729cac0319f27
+
+  var APIkey = "563492ad6f91700001000001b70fb799bff84ca4b8a69bfeb2fb60e3";
 
   var queryQuestions = {
     questions: [
@@ -363,8 +368,94 @@ $(document).ready(function () {
       counterFour++;
     });
   }
-  
-  
-});
 
-// If check  button color = #6dda6dbd, add to vision board
+  // Variables for local storage for question five
+  var keywordsFive = localStorage
+    .getItem(queryQuestions.questions[4])
+    .toLowerCase();
+  var keywordsFiveArr = keywordsFive.split(",");
+  keywordsFiveArr.pop();
+
+  var questionFive = 0;
+  var counterFive = 0;
+
+  // AJAX call for question five
+  for (i = 0; i < keywordsFiveArr.length; i++) {
+    var query = keywordsFiveArr[questionFive];
+    questionFive++;
+    var queryUrl = "https://api.pexels.com/v1/search?query=" + query;
+    $.ajax({
+      url: queryUrl,
+      method: "GET",
+      headers: { Authorization: APIkey },
+    }).then(function (response) {
+      console.log(response);
+      // Variables
+      var div = $("#" + keywordsFiveArr[counterFive]);
+      var imageWrapper = $("#" + keywordsFiveArr[counterFive] + "-image");
+      var header = $("<h2>");
+      var checkBtn = $("<button>");
+      var timesBtn = $("<button>");
+      var checkBtnId = "#" + keywordsFiveArr[counterFive] + "-keep-btn";
+      var timesBtnId = "#" + keywordsFiveArr[counterFive] + "-remove-btn";
+      // Function to create the image and the header
+      function createImage() {
+        imageWrapper.empty();
+        randomImage = Math.floor(Math.random() * response.photos.length);
+        // Add work header to the page
+        header.text(keywordsFiveArr[counterFive]);
+        imageWrapper.append(header);
+        div.append(imageWrapper);
+        // Create image and add it to the page
+        imageSource = response.photos[randomImage].src.large;
+        var generatedImage = $("<img>");
+        generatedImage.attr("src", imageSource);
+        generatedImage.addClass("image-choice");
+        imageWrapper.append(generatedImage);
+        div.append(imageWrapper);
+      }
+      function createButtons() {
+        // Create check button
+        checkBtn.addClass("btn check-btn");
+        checkBtn.attr("id", keywordsFiveArr[counterFive] + "-keep-btn");
+        var checkIcon = $("<i>");
+        checkIcon.addClass("fas fa-check-square fa-lg");
+        checkBtn.append(checkIcon);
+        // Create times button
+        timesBtn.addClass("btn times-btn");
+        timesBtn.attr("id", keywordsFiveArr[counterFive] + "-remove-btn");
+        var timesIcon = $("<i>");
+        timesIcon.addClass("fas fa-times-circle fa-lg");
+        timesBtn.append(timesIcon);
+      }
+      createButtons();
+
+      // Function to keep image
+      function keepImage(event) {
+        event.preventDefault();
+        $(checkBtnId).attr("style", "background-color:#6dda6dbd !important");
+      }
+
+      // Append buttons to the work div
+      div.append(checkBtn);
+      div.append(timesBtn);
+
+      createImage();
+
+      // Function to get a new image when the times button is clicked
+      function getNewImage(event) {
+        if ($(checkBtnId).attr("style", "background-color:#6dda6dbd")) {
+          $(checkBtnId).attr("style", "background-color: #464646a3");
+        }
+        createImage();
+      }
+
+      // Event listeners
+      $(checkBtnId).on("click", keepImage);
+      $(timesBtnId).on("click", getNewImage);
+      counterFive++;
+    });
+  }
+  // If check  button color = #6dda6dbd, add to vision board
+
+});
