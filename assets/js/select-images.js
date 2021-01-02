@@ -19,17 +19,14 @@ $(document).ready(function () {
   var keywordsOne = localStorage
     .getItem(queryQuestions.questions[0])
     .toLowerCase();
-  console.log(keywordsOne);
   var keywordsOneArr = keywordsOne.split(",");
   keywordsOneArr.pop();
-  console.log(keywordsOneArr);
   var counterOne = 0;
   var questionOne = 0;
 
   // Ajax call for question one
   for (i = 0; i < keywordsOneArr.length; i++) {
     var query = keywordsOneArr[questionOne];
-    console.log(query);
     questionOne++;
     var queryUrl =
       "https://api.pexels.com/v1/search?per_page=50&query=" + query;
@@ -38,7 +35,6 @@ $(document).ready(function () {
       method: "GET",
       headers: { Authorization: APIkey },
     }).then(function (response) {
-      console.log(response);
       // Variables
       var div = $("#" + keywordsOneArr[counterOne]);
       var imageWrapper = $("#" + keywordsOneArr[counterOne] + "-image");
@@ -56,7 +52,7 @@ $(document).ready(function () {
         imageWrapper.append(header);
         div.append(imageWrapper);
         // Create image and add it to the page
-        imageSource = response.photos[randomImage].src.original;
+        imageSource = response.photos[randomImage].src.large;
         var generatedImage = $("<img>");
         generatedImage.attr("src", imageSource);
         generatedImage.addClass("image-choice");
@@ -119,7 +115,6 @@ $(document).ready(function () {
   // AJAX call for question two
   for (i = 0; i < keywordsTwoArr.length; i++) {
     var query = keywordsTwoArr[questionTwo];
-    console.log(query);
     questionTwo++;
     var queryUrl = "https://api.pexels.com/v1/search?query=" + query;
     $.ajax({
@@ -144,7 +139,7 @@ $(document).ready(function () {
         imageWrapper.append(header);
         div.append(imageWrapper);
         // Create image and add it to the page
-        imageSource = response.photos[randomImage].src.original;
+        imageSource = response.photos[randomImage].src.large;
         var generatedImage = $("<img>");
         generatedImage.attr("src", imageSource);
         generatedImage.addClass("image-choice");
@@ -207,7 +202,6 @@ $(document).ready(function () {
   // AJAX call for question three
   for (i = 0; i < keywordsThreeArr.length; i++) {
     var query = keywordsThreeArr[questionThree];
-    console.log(query);
     questionThree++;
     var queryUrl = "https://api.pexels.com/v1/search?query=" + query;
     $.ajax({
@@ -232,7 +226,7 @@ $(document).ready(function () {
         imageWrapper.append(header);
         div.append(imageWrapper);
         // Create image and add it to the page
-        imageSource = response.photos[randomImage].src.original;
+        imageSource = response.photos[randomImage].src.large;
         var generatedImage = $("<img>");
         generatedImage.attr("src", imageSource);
         generatedImage.addClass("image-choice");
@@ -295,7 +289,6 @@ $(document).ready(function () {
   // AJAX call for question four
   for (i = 0; i < keywordsFourArr.length; i++) {
     var query = keywordsFourArr[questionFour];
-    console.log(query);
     questionFour++;
     var queryUrl = "https://api.pexels.com/v1/search?query=" + query;
     $.ajax({
@@ -303,6 +296,7 @@ $(document).ready(function () {
       method: "GET",
       headers: { Authorization: APIkey },
     }).then(function (response) {
+      console.log(response);
       // Variables
       var div = $("#" + keywordsFourArr[counterFour]);
       var imageWrapper = $("#" + keywordsFourArr[counterFour] + "-image");
@@ -320,7 +314,7 @@ $(document).ready(function () {
         imageWrapper.append(header);
         div.append(imageWrapper);
         // Create image and add it to the page
-        imageSource = response.photos[randomImage].src.original;
+        imageSource = response.photos[randomImage].src.large;
         var generatedImage = $("<img>");
         generatedImage.attr("src", imageSource);
         generatedImage.addClass("image-choice");
