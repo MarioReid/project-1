@@ -53,10 +53,10 @@ $(document).ready(function () {
   var num = 0;
 
   // Variables for local storage
-  var stringifiedKeywords = JSON.stringify(localStorage.getItem(queryQuestions.questions[0])) || [];
-  var keywords = JSON.parse(stringifiedKeywords.toLowerCase());
-  var keywordsArray= [];
-  keywordsArray.push(keywords);
+  var keywords = localStorage.getItem(queryQuestions.questions[0]);
+  console.log(keywords);
+  var keywordsArray = keywords.split(',');
+  keywordsArray.pop();
   console.log(keywordsArray);
 
   // Ajax call for question one
