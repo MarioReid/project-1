@@ -1,6 +1,7 @@
 # Visualize
 [![GitHub issues](https://img.shields.io/github/issues/MarioReid/project-1)](https://github.com/MarioReid/project-1/issues)
 ## Description 
+[Visualize](https://marioreid.github.io/project-1/) is a vision board generator designed to give the user a pictorial representation of their goals.
 
 View the deployed application here: https://marioreid.github.io/project-1/
 
@@ -17,7 +18,18 @@ View the deployed application here: https://marioreid.github.io/project-1/
 4. In your terminal, go into the directory that you want to host Visualize.
 5. Use the command **git clone [insert SSH key URL]** and click **Enter** (*Requires Git*).
 ## Usage
-
+First, the user answers a series of prompts to choose what they would visualize in the future.
+<!-- Insert Screenshot -->
+![Screenshot of Question and Answers]()
+Next, the user would pick images based on what user chose based on the series of questions. 
+<!-- Insert Screenshot -->
+![Screenshot of Images to Select]()
+Then, a vision board is generated with the images the user chose.
+<!-- Insert Screenshot -->
+![Screenshot of Vision Board]()
+Once the vision board has been created, the user may download the final product as a PDF.
+<!-- Insert Screenshot -->
+![Screenshot of PDF]()
 ## Credits
 The following people contributed to the success of this application. You can view their GitHub profiles by clicking on their names:
 * [Miranda McDonald](https://github.com/mirandagrace-dev)
