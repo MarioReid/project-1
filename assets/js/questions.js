@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  localStorage.clear();
   //get dom variables
   localStorage.clear();
 
