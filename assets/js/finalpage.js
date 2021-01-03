@@ -3,7 +3,7 @@ $(document).ready(function () {
   var APIkey = "12d4c39638bec326a8fe210ca42c345e";
   var documentUrl = "https://marioreid.github.io/project-1/finalpage.html";
   var queryUrl =
-    "http://api.pdflayer.com/api/convert?access_key=" +
+    "https://api.pdflayer.com/api/convert?access_key=" +
     APIkey +
     "&document_url=" +
     documentUrl;
