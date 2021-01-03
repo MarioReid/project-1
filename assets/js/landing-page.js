@@ -1,3 +1,3 @@
-$(document).ready(function(){
-    $("h1").attr("style", "color:red !important");
-})
+// $(document).ready(function () {
+//     var quote = $("#quote")
+// });
