@@ -21,6 +21,7 @@ $(document).ready(function () {
 
   // AJAX call to download vision board as a PDF
   $.ajax({
+    html: "base64 encoded string",
     url: queryUrl,
     method: "POST",
   }).then(function (response) {
