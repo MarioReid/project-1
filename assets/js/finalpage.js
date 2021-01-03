@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  // Variables
   var APIkey = "12d4c39638bec326a8fe210ca42c345e";
   var documentUrl = "https://marioreid.github.io/project-1/finalpage.html";
   var queryUrl =
@@ -6,6 +7,8 @@ $(document).ready(function () {
     APIkey +
     "&document_url=" +
     documentUrl;
+
+  // AJAX call to download vision board as a PDF
   $.ajax({
     url: queryUrl,
     method: "GET",
@@ -16,4 +19,7 @@ $(document).ready(function () {
       window.open(queryUrl);
     });
   });
+
+  // Append images from local storage to the col-10
+  
 });
