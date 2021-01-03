@@ -7,19 +7,25 @@ $(document).ready(function () {
     APIkey +
     "&document_url=" +
     documentUrl;
+  var visionBoard = JSON.parse(localStorage.getItem("images")) || [];
 
   // AJAX call to download vision board as a PDF
   $.ajax({
     url: queryUrl,
     method: "GET",
   }).then(function (response) {
-    console.log(response);
-    $(".pdf-btn").on("click",function openPdf(){
+    $(".pdf-btn").on("click", function openPdf() {
       console.log("You clicked the PDF button!");
       window.open(queryUrl);
     });
   });
 
   // Append images from local storage to the col-10
-  
+  for (var i = 0; i < visionBoard.length; i++) {
+    console.log(visionBoard[i]);
+    var visionBoardDiv = $("#vision-board");
+    var h1Test = $("<h1>");
+    h1Test.text("This is a test");
+    visionBoardDiv.append(h1Test);
+  }
 });
