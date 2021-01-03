@@ -93,7 +93,6 @@ $(document).ready(function () {
           $(checkBtnId).attr("style", "background-color: #6dda6dbd !important")
         ) {
           chosenImages.push(chosenImagesSrc);
-          console.log(chosenImages);
         }
       }
 
@@ -188,7 +187,6 @@ $(document).ready(function () {
           $(checkBtnId).attr("style", "background-color: #6dda6dbd !important")
         ) {
           chosenImages.push(chosenImagesSrc);
-          console.log(chosenImages);
         }
       }
 
@@ -283,7 +281,6 @@ $(document).ready(function () {
           $(checkBtnId).attr("style", "background-color: #6dda6dbd !important")
         ) {
           chosenImages.push(chosenImagesSrc);
-          console.log(chosenImages);
         }
       }
 
@@ -328,7 +325,6 @@ $(document).ready(function () {
       method: "GET",
       headers: { Authorization: APIkey },
     }).then(function (response) {
-      console.log(response);
       // Variables
       var div = $("#" + keywordsFourArr[counterFour]);
       var imageWrapper = $("#" + keywordsFourArr[counterFour] + "-image");
@@ -379,7 +375,6 @@ $(document).ready(function () {
           $(checkBtnId).attr("style", "background-color: #6dda6dbd !important")
         ) {
           chosenImages.push(chosenImagesSrc);
-          console.log(chosenImages);
         }
       }
 
@@ -424,7 +419,6 @@ $(document).ready(function () {
       method: "GET",
       headers: { Authorization: APIkey },
     }).then(function (response) {
-      console.log(response);
       // Variables
       var div = $("#" + keywordsFiveArr[counterFive]);
       var imageWrapper = $("#" + keywordsFiveArr[counterFive] + "-image");
@@ -475,7 +469,6 @@ $(document).ready(function () {
           $(checkBtnId).attr("style", "background-color: #6dda6dbd !important")
         ) {
           chosenImages.push(chosenImagesSrc);
-          console.log(chosenImages);
         }
       }
 
@@ -503,6 +496,7 @@ $(document).ready(function () {
   function saveImages(event) {
     event.preventDefault();
     localStorage.setItem("images", JSON.stringify(chosenImages));
+    window.open("./finalpage.html")
   }
   $("#submit-btn").on("click", saveImages);
 });
