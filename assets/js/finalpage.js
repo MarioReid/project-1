@@ -24,8 +24,8 @@ $(document).ready(function () {
   for (var i = 0; i < visionBoard.length; i++) {
     console.log(visionBoard[i]);
     var visionBoardDiv = $("#vision-board");
-    var h1Test = $("<h1>");
-    h1Test.text("This is a test");
-    visionBoardDiv.append(h1Test);
+    var images = $("<img>");
+    images.attr("src", visionBoard[i]);
+    visionBoardDiv.append(images);
   }
 });
