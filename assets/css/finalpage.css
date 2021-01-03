@@ -1,3 +1,9 @@
+img {
+    height: 300px;
+    width: 50%;
+    object-fit: cover;
+}
+
 .container {
     margin-bottom: 40px;
 }
