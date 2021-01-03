@@ -88,7 +88,6 @@ $(document).ready(function () {
         ) {
           chosenImages.push(chosenImagesSrc);
           console.log(chosenImages);
-          localStorage.setItem("images", JSON.stringify(chosenImages));
         }
       }
 
@@ -377,14 +376,7 @@ $(document).ready(function () {
   // If check  button color = #6dda6dbd, save to local storage
   function saveImages(event) {
     event.preventDefault();
-    console.log("You clicked the submit button!");
-    if ($(".check-btn").attr("style", "background-color= #6dda6dbd")) {
-      console.log("This many buttons are green!");
-      console.log(
-        $(".check-btn")[0].nextSibling.nextElementSibling.lastChild.currentSrc
-      );
-      chosenImages.push();
-    }
+    localStorage.setItem("images", JSON.stringify(chosenImages));
   }
   $("#submit-btn").on("click", saveImages);
 });
