@@ -15,10 +15,11 @@ $(document).ready(function () {
     console.log(response);
     console.log(response.message);
     var quote = $("<h5>");
+    quote.addClass("rightHandText");
     quote.text('"' + response.message + '"');
     quoteDiv.append(quote);
     var author = $("<h5>");
     author.text(" - " + response.author);
-    quoteDiv.append(author);
+    quote.append(author);
   });
 });
