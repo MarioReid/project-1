@@ -101,7 +101,6 @@ $(document).ready(function () {
     if ($(this).hasClass("active")) {
       $(this).removeClass("active");
       selectedAnswers.pop(answerText);
-      selectedAnswers.pop(answerText);
     } else if (!$(this).hasClass("active")) {
       $(this).addClass("active");
       selectedAnswers.push(answerText);
