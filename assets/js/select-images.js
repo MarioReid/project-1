@@ -1,14 +1,11 @@
 $(document).ready(function () {
   // Variables
-<<<<<<< HEAD
-=======
   // API keys:
   // 563492ad6f91700001000001b70fb799bff84ca4b8a69bfeb2fb60e3
   // 563492ad6f9170000100000112de21acddfb45349d452259a36f012a
   // 563492ad6f91700001000001976c9517bf874507bcc729cac0319f27
 
   var APIkey = "563492ad6f91700001000001b70fb799bff84ca4b8a69bfeb2fb60e3";
->>>>>>> 
 
   var queryQuestions = {
     questions: [
@@ -407,14 +404,13 @@ $(document).ready(function () {
       counterFour++;
     });
   }
-<<<<<<< HEAD
+
   // If check  button color = #6dda6dbd, save to local storage
   function saveImages(event) {
     event.preventDefault();
     localStorage.setItem("images", JSON.stringify(chosenImages));
   }
   $("#submit-btn").on("click", saveImages);
-=======
 
   // Variables for local storage for question five
   var keywordsFive = localStorage
@@ -504,6 +500,4 @@ $(document).ready(function () {
     });
   }
   // If check  button color = #6dda6dbd, add to vision board
-
->>>>>>> cb58ced4b6cda2c647b4271e6dc617486b947d88
 });
