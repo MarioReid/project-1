@@ -6,14 +6,13 @@ $(document).ready(function () {
     "https://api.pdflayer.com/api/convert?access_key=" +
     APIkey +
     "&document_url=" +
-    "&no_images=0" +
     documentUrl;
   var visionBoard = JSON.parse(localStorage.getItem("images")) || [];
 
   // AJAX call to download vision board as a PDF
   $.ajax({
     url: queryUrl,
-    method: "GET",
+    method: "POST",
   }).then(function (response) {
     $(".pdf-btn").on("click", function openPdf() {
       window.open(queryUrl);
