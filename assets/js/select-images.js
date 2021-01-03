@@ -87,7 +87,8 @@ $(document).ready(function () {
           $(checkBtnId).attr("style", "background-color: #6dda6dbd !important")
         ) {
           chosenImages.push(chosenImagesSrc);
-          console.log(chosenImages)
+          console.log(chosenImages);
+          localStorage.setItem("images", JSON.stringify(chosenImages));
         }
       }
 
