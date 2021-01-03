@@ -12,7 +12,7 @@ $(document).ready(function () {
   // AJAX call to download vision board as a PDF
   $.ajax({
     url: queryUrl,
-    method: "GET",
+    method: "POST",
   }).then(function (response) {
     $(".pdf-btn").on("click", function openPdf() {
       window.open(queryUrl);
