@@ -1,12 +1,13 @@
 $(document).ready(function () {
   // Variables
-  var APIkey = "12d4c39638bec326a8fe210ca42c345e";
+  var APIkey = "eaf25249dc224e30241c400939108e64";
   var documentUrl = "https://marioreid.github.io/project-1/finalpage.html";
   var queryUrl =
-    "https://api.pdflayer.com/api/convert?access_key=" +
-    APIkey +
-    "&document_url=" +
-    documentUrl;
+  "https://api.screenshotlayer.com/api/capture" + 
+  "?access_key=" + APIkey + 
+  "&url=" + documentUrl +
+  "&viewport=1440x900" + 
+  "&fullpage=1";
   var visionBoard = JSON.parse(localStorage.getItem("images")) || [];
 
   // Append images from local storage
@@ -20,7 +21,6 @@ $(document).ready(function () {
 
   // AJAX call to download vision board as a PDF
   $.ajax({
-    encoding: null,
     url: queryUrl,
     method: "POST",
   }).then(function (response) {
