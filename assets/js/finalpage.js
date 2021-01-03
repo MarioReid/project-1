@@ -9,19 +9,20 @@ $(document).ready(function () {
     documentUrl;
   var visionBoard = JSON.parse(localStorage.getItem("images")) || [];
 
+  // Append images from local storage 
+  for (var i = 0; i < visionBoard.length; i++) {
+    console.log(visionBoard[i]);
+    var visionBoardDiv = $("#vision-board");
+    var images = $("<img>");
+    images.attr("src", visionBoard[i]);
+    visionBoardDiv.append(images);
+  }
+
   // AJAX call to download vision board as a PDF
   $.ajax({
     url: queryUrl,
     method: "POST",
   }).then(function (response) {
-    // Append images from local storage to the col-10
-    for (var i = 0; i < visionBoard.length; i++) {
-      console.log(visionBoard[i]);
-      var visionBoardDiv = $("#vision-board");
-      var images = $("<img>");
-      images.attr("src", visionBoard[i]);
-      visionBoardDiv.append(images);
-    }
     $(".pdf-btn").on("click", function openPdf() {
       window.open(queryUrl);
     });
