@@ -14,17 +14,16 @@ $(document).ready(function () {
     url: queryUrl,
     method: "POST",
   }).then(function (response) {
+    // Append images from local storage to the col-10
+    for (var i = 0; i < visionBoard.length; i++) {
+      console.log(visionBoard[i]);
+      var visionBoardDiv = $("#vision-board");
+      var images = $("<img>");
+      images.attr("src", visionBoard[i]);
+      visionBoardDiv.append(images);
+    }
     $(".pdf-btn").on("click", function openPdf() {
       window.open(queryUrl);
     });
   });
-
-  // Append images from local storage to the col-10
-  for (var i = 0; i < visionBoard.length; i++) {
-    console.log(visionBoard[i]);
-    var visionBoardDiv = $("#vision-board");
-    var images = $("<img>");
-    images.attr("src", visionBoard[i]);
-    visionBoardDiv.append(images);
-  }
 });
