@@ -6,6 +6,7 @@ $(document).ready(function () {
     "https://api.pdflayer.com/api/convert?access_key=" +
     APIkey +
     "&document_url=" +
+    "&no_images=0" +
     documentUrl;
   var visionBoard = JSON.parse(localStorage.getItem("images")) || [];
 
