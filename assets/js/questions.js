@@ -100,7 +100,7 @@ $(document).ready(function () {
     var question = $("h1")[0].innerText;
     if ($(this).hasClass("active")) {
       $(this).removeClass("active");
-      selectedAnswers.splice(answerText);
+      selectedAnswers.pop(answerText);
     } else if (!$(this).hasClass("active")) {
       $(this).addClass("active");
       selectedAnswers.push(answerText);

@@ -23,7 +23,6 @@ $(document).ready(function () {
   var chosenImages = [];
   localStorage.removeItem("images");
 
-
   // Variables for local storage for question one
   var keywordsOne = localStorage
     .getItem(queryQuestions.questions[0])
@@ -405,13 +404,6 @@ $(document).ready(function () {
     });
   }
 
-  // If check  button color = #6dda6dbd, save to local storage
-  function saveImages(event) {
-    event.preventDefault();
-    localStorage.setItem("images", JSON.stringify(chosenImages));
-  }
-  $("#submit-btn").on("click", saveImages);
-
   // Variables for local storage for question five
   var keywordsFive = localStorage
     .getItem(queryQuestions.questions[4])
@@ -476,7 +468,15 @@ $(document).ready(function () {
       // Function to keep image
       function keepImage(event) {
         event.preventDefault();
+        var chosenImagesSrc = $(checkBtnId)[0].nextSibling.nextElementSibling
+          .lastChild.currentSrc;
         $(checkBtnId).attr("style", "background-color:#6dda6dbd !important");
+        if (
+          $(checkBtnId).attr("style", "background-color: #6dda6dbd !important")
+        ) {
+          chosenImages.push(chosenImagesSrc);
+          console.log(chosenImages);
+        }
       }
 
       // Append buttons to the work div
@@ -499,5 +499,10 @@ $(document).ready(function () {
       counterFive++;
     });
   }
-  // If check  button color = #6dda6dbd, add to vision board
+  // If check  button color = #6dda6dbd, save to local storage
+  function saveImages(event) {
+    event.preventDefault();
+    localStorage.setItem("images", JSON.stringify(chosenImages));
+  }
+  $("#submit-btn").on("click", saveImages);
 });
