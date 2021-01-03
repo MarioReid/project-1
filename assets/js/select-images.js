@@ -15,6 +15,8 @@ $(document).ready(function () {
   var randomImage;
   var i;
 
+  var chosenImages = [];
+
   // Variables for local storage for question one
   var keywordsOne = localStorage
     .getItem(queryQuestions.questions[0])
@@ -78,7 +80,15 @@ $(document).ready(function () {
       // Function to keep image
       function keepImage(event) {
         event.preventDefault();
+        var chosenImagesSrc = $(checkBtnId)[0].nextSibling.nextElementSibling
+          .lastChild.currentSrc;
         $(checkBtnId).attr("style", "background-color:#6dda6dbd !important");
+        if (
+          $(checkBtnId).attr("style", "background-color: #6dda6dbd !important")
+        ) {
+          chosenImages.push(chosenImagesSrc);
+          console.log(chosenImages)
+        }
       }
 
       // Append buttons to the work div
@@ -363,8 +373,17 @@ $(document).ready(function () {
       counterFour++;
     });
   }
-  
-  
+  // If check  button color = #6dda6dbd, save to local storage
+  function saveImages(event) {
+    event.preventDefault();
+    console.log("You clicked the submit button!");
+    if ($(".check-btn").attr("style", "background-color= #6dda6dbd")) {
+      console.log("This many buttons are green!");
+      console.log(
+        $(".check-btn")[0].nextSibling.nextElementSibling.lastChild.currentSrc
+      );
+      chosenImages.push();
+    }
+  }
+  $("#submit-btn").on("click", saveImages);
 });
-
-// If check  button color = #6dda6dbd, add to vision board
