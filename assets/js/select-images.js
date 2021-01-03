@@ -16,6 +16,8 @@ $(document).ready(function () {
   var i;
 
   var chosenImages = [];
+  localStorage.removeItem("images");
+
 
   // Variables for local storage for question one
   var keywordsOne = localStorage
@@ -175,7 +177,15 @@ $(document).ready(function () {
       // Function to keep image
       function keepImage(event) {
         event.preventDefault();
+        var chosenImagesSrc = $(checkBtnId)[0].nextSibling.nextElementSibling
+          .lastChild.currentSrc;
         $(checkBtnId).attr("style", "background-color:#6dda6dbd !important");
+        if (
+          $(checkBtnId).attr("style", "background-color: #6dda6dbd !important")
+        ) {
+          chosenImages.push(chosenImagesSrc);
+          console.log(chosenImages);
+        }
       }
 
       // Append buttons to the work div
@@ -262,7 +272,15 @@ $(document).ready(function () {
       // Function to keep image
       function keepImage(event) {
         event.preventDefault();
+        var chosenImagesSrc = $(checkBtnId)[0].nextSibling.nextElementSibling
+          .lastChild.currentSrc;
         $(checkBtnId).attr("style", "background-color:#6dda6dbd !important");
+        if (
+          $(checkBtnId).attr("style", "background-color: #6dda6dbd !important")
+        ) {
+          chosenImages.push(chosenImagesSrc);
+          console.log(chosenImages);
+        }
       }
 
       // Append buttons to the work div
@@ -350,7 +368,15 @@ $(document).ready(function () {
       // Function to keep image
       function keepImage(event) {
         event.preventDefault();
+        var chosenImagesSrc = $(checkBtnId)[0].nextSibling.nextElementSibling
+          .lastChild.currentSrc;
         $(checkBtnId).attr("style", "background-color:#6dda6dbd !important");
+        if (
+          $(checkBtnId).attr("style", "background-color: #6dda6dbd !important")
+        ) {
+          chosenImages.push(chosenImagesSrc);
+          console.log(chosenImages);
+        }
       }
 
       // Append buttons to the work div
