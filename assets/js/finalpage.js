@@ -9,7 +9,7 @@ $(document).ready(function () {
     documentUrl;
   var visionBoard = JSON.parse(localStorage.getItem("images")) || [];
 
-  // Append images from local storage 
+  // Append images from local storage
   for (var i = 0; i < visionBoard.length; i++) {
     console.log(visionBoard[i]);
     var visionBoardDiv = $("#vision-board");
@@ -20,8 +20,9 @@ $(document).ready(function () {
 
   // AJAX call to download vision board as a PDF
   $.ajax({
+    encoding: null,
     url: queryUrl,
-    method: "GET",
+    method: "POST",
   }).then(function (response) {
     $(".pdf-btn").on("click", function openPdf() {
       window.open(queryUrl);
