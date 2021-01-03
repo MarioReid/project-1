@@ -15,7 +15,6 @@ $(document).ready(function () {
     method: "GET",
   }).then(function (response) {
     $(".pdf-btn").on("click", function openPdf() {
-      console.log("You clicked the PDF button!");
       window.open(queryUrl);
     });
   });
