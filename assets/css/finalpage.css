@@ -1,7 +1,19 @@
+/* COLOR PALETTE */
+/* #F8E9A1 - Yellow */
+/* #F76C6C - Bright red */
+/* #A8D0E6 - Light blue */
+/* #374785 - Darker blue */
+/* #24305E - Darkest blue */
+
 img {
-    height: 300px;
-    width: 50%;
+    margin-top: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 350px;
+    width: 350px;
     object-fit: cover;
+    border: solid #24305E 3px;
+    border-radius: 5px;
 }
 
 .container {
