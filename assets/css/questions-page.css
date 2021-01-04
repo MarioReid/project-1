@@ -44,3 +44,23 @@ button:hover {
 .ans {
 	text-align: center;
 }
+
+nav {
+	font-family: "Advent Pro";
+	background-color: none;
+	color: white;
+	padding-right: 10px;
+}
+
+.navbar-nav a {
+	color: white !important;
+	text-align: right;
+}
+
+.navbar-nav a:hover {
+	color: #f76c6c;
+}
+
+.navbar-toggler {
+	margin: 0;
+}
