@@ -5,7 +5,7 @@ $(document).ready(function () {
   // 563492ad6f9170000100000112de21acddfb45349d452259a36f012a
   // 563492ad6f91700001000001976c9517bf874507bcc729cac0319f27
 
-  var APIkey = "563492ad6f9170000100000112de21acddfb45349d452259a36f012a";
+  var APIkey = "563492ad6f91700001000001976c9517bf874507bcc729cac0319f27";
 
   var queryQuestions = {
     questions: [
@@ -55,10 +55,6 @@ $(document).ready(function () {
       function createImage() {
         imageWrapper.empty();
         randomImage = Math.floor(Math.random() * response.photos.length);
-        // Add work header to the page
-        header.text(keywordsOneArr[counterOne]);
-        imageWrapper.append(header);
-        div.append(imageWrapper);
         // Create image and add it to the page
         imageSource = response.photos[randomImage].src.large;
         var generatedImage = $("<img>");
@@ -149,10 +145,6 @@ $(document).ready(function () {
       function createImage() {
         imageWrapper.empty();
         randomImage = Math.floor(Math.random() * response.photos.length);
-        // Add work header to the page
-        header.text(keywordsTwoArr[counterTwo]);
-        imageWrapper.append(header);
-        div.append(imageWrapper);
         // Create image and add it to the page
         imageSource = response.photos[randomImage].src.large;
         var generatedImage = $("<img>");
@@ -243,10 +235,6 @@ $(document).ready(function () {
       function createImage() {
         imageWrapper.empty();
         randomImage = Math.floor(Math.random() * response.photos.length);
-        // Add work header to the page
-        header.text(keywordsThreeArr[counterThree]);
-        imageWrapper.append(header);
-        div.append(imageWrapper);
         // Create image and add it to the page
         imageSource = response.photos[randomImage].src.large;
         var generatedImage = $("<img>");
@@ -312,12 +300,15 @@ $(document).ready(function () {
   var keywordsFourArr = keywordsFour.split(",");
   keywordsFourArr.pop();
   var counterFour = 0;
-  var questionFour = 0;
+  var questionFour = -1;
 
   // Ajax call for question Four
   for (i = 0; i < keywordsFourArr.length; i++) {
-    var query = keywordsFourArr[questionFour];
     questionFour++;
+    var query = keywordsFourArr[questionFour];
+      console.log(questionFour)
+    // questionFour++;
+      console.log(questionFour)
     var queryUrl =
       "https://api.pexels.com/v1/search?per_page=50&query=" + query;
     $.ajax({
@@ -338,10 +329,6 @@ $(document).ready(function () {
       function createImage() {
         imageWrapper.empty();
         randomImage = Math.floor(Math.random() * response.photos.length);
-        // Add work header to the page
-        header.text(keywordsFourArr[counterFour]);
-        imageWrapper.append(header);
-        div.append(imageWrapper);
         // Create image and add it to the page
         imageSource = response.photos[randomImage].src.large;
         var generatedImage = $("<img>");
@@ -432,10 +419,6 @@ $(document).ready(function () {
       function createImage() {
         imageWrapper.empty();
         randomImage = Math.floor(Math.random() * response.photos.length);
-        // Add work header to the page
-        header.text(keywordsFiveArr[counterFive]);
-        imageWrapper.append(header);
-        div.append(imageWrapper);
         // Create image and add it to the page
         imageSource = response.photos[randomImage].src.large;
         var generatedImage = $("<img>");
