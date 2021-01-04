@@ -27,16 +27,16 @@ $(document).ready(function () {
       answers: ["Work", "School", "Relationships", "Health"],
     },
     questionTwo: {
-      answers: ["Money", "Recognition", "Power", "Passion", "Helping others"],
+      answers: ["Money", "Recognition", "Power", "Charity"],
     },
     questionThree: {
-      answers: ["Islands", "Mountains", "Beach", "Country"],
+      answers: ["Desert", "Mountains", "Beach", "Country"],
     },
     questionFour: {
-      answers: ["Travel", "Sports activities", "Go back to school"],
+      answers: ["Travel", "Skydive", "College", "Invest"],
     },
     questionFive: {
-      answers: ["Money", "Family", "Helping others", "Fun"],
+      answers: ["Volunteering", "Family", "Fitness", "Fun"],
     },
   };
 
