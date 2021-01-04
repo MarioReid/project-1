@@ -26,9 +26,8 @@ p {
 }
 
 .footer {
-	padding-top: 20px;
+	border-top: 20px solid #374785;
     position: fixed;
-    left: 0;
     bottom: 0;
     width: 100%;
     text-align: center;
