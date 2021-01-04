@@ -305,26 +305,27 @@ $(document).ready(function () {
     });
   }
 
-  // Variables for local storage for question four
+  // Variables for local storage for question Four
   var keywordsFour = localStorage
     .getItem(queryQuestions.questions[3])
     .toLowerCase();
   var keywordsFourArr = keywordsFour.split(",");
   keywordsFourArr.pop();
-
-  var questionFour = 0;
   var counterFour = 0;
+  var questionFour = 0;
 
-  // AJAX call for question four
+  // Ajax call for question Four
   for (i = 0; i < keywordsFourArr.length; i++) {
     var query = keywordsFourArr[questionFour];
     questionFour++;
-    var queryUrl = "https://api.pexels.com/v1/search?query=" + query;
+    var queryUrl =
+      "https://api.pexels.com/v1/search?per_page=50&query=" + query;
     $.ajax({
       url: queryUrl,
       method: "GET",
       headers: { Authorization: APIkey },
     }).then(function (response) {
+     console.log(response)
       // Variables
       var div = $("#" + keywordsFourArr[counterFour]);
       var imageWrapper = $("#" + keywordsFourArr[counterFour] + "-image");
