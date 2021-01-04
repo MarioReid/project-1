@@ -29,7 +29,7 @@ $(document).ready(function () {
   function openPdf() {
     $.ajax({
       url: queryUrl,
-      method: "POST",
+      method: "GET",
     }).then(function (response) {
       console.log(response);
     });
