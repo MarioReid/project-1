@@ -476,11 +476,17 @@ $(document).ready(function () {
       counterFive++;
     });
   }
+  
   // If check  button color = #6dda6dbd, save to local storage
   function saveImages(event) {
+
     event.preventDefault();
     localStorage.setItem("images", JSON.stringify(chosenImages));
-    window.open("./finalpage.html")
+    if (localStorage.getItem("images")==="[]" ||localStorage.getItem("images")===null){
+      alert("You didn't select any images");
+    }
+    // window.open("./finalpage.html")
+    console.log(localStorage.getItem("images"));
   }
   $("#submit-btn").on("click", saveImages);
 });
