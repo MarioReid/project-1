@@ -65,6 +65,11 @@ nav {
 	float: left;
 }
 
+@media(max-width:768px){
+	
+}
+
+
 .rightHandText {
 	padding: 7% 5% 7% 5%;
 }
