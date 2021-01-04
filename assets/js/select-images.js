@@ -306,9 +306,9 @@ $(document).ready(function () {
   for (i = 0; i < keywordsFourArr.length; i++) {
     questionFour++;
     var query = keywordsFourArr[questionFour];
-      console.log(questionFour)
+    console.log(questionFour);
     // questionFour++;
-      console.log(questionFour)
+    console.log(questionFour);
     var queryUrl =
       "https://api.pexels.com/v1/search?per_page=50&query=" + query;
     $.ajax({
@@ -316,7 +316,7 @@ $(document).ready(function () {
       method: "GET",
       headers: { Authorization: APIkey },
     }).then(function (response) {
-     console.log(response)
+      console.log(response);
       // Variables
       var div = $("#" + keywordsFourArr[counterFour]);
       var imageWrapper = $("#" + keywordsFourArr[counterFour] + "-image");
@@ -476,17 +476,19 @@ $(document).ready(function () {
       counterFive++;
     });
   }
-  
+
   // If check  button color = #6dda6dbd, save to local storage
   function saveImages(event) {
-
     event.preventDefault();
     localStorage.setItem("images", JSON.stringify(chosenImages));
-    if (localStorage.getItem("images")==="[]" ||localStorage.getItem("images")===null){
-      alert("You didn't select any images");
+    if (
+      localStorage.getItem("images") === "[]" ||
+      localStorage.getItem("images") === null
+    ) {
+      window.open("./no-image-chosen.html");
+    } else {
+      window.open("./finalpage.html");
     }
-    // window.open("./finalpage.html")
-    console.log(localStorage.getItem("images"));
   }
   $("#submit-btn").on("click", saveImages);
 });
