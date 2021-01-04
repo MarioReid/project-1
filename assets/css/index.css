@@ -27,10 +27,10 @@ p {
 
 .footer {
 	border-top: 20px solid #374785;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
 	color: white;
 	background-color: #374785;
 }
