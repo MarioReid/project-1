@@ -6,102 +6,122 @@
 /* #24305E - Darkest blue */
 
 body {
-  text-align: center;
-  background-color: #374785;
+	text-align: center;
+	background-color: #374785;
 }
 
-h2, #submit-btn, #sub-title {
-  font-family: "Advent Pro";
-}
-
-h2{
-  color:#A8D0E6;
-}
-
-h1 {
-  font-family: Pacifico;
+h2,
+#submit-btn,
+#sub-title {
+	font-family: "Advent Pro";
 }
 
 h2 {
-  margin-top: 30px;
+	color: #a8d0e6;
+}
+
+h1 {
+	font-family: Pacifico;
+}
+
+h2 {
+	margin-top: 30px;
 }
 
 .container {
-    margin-bottom: 30px;
+	margin-bottom: 30px;
 }
 
 #sub-title {
-    font-size: 20px;
+	font-size: 20px;
 }
 
 .image-choice {
-  width: 100%;
-  margin-top: 30px;
-  object-fit: cover;
-  height: 275px;
-  border-radius: 5px;
+	width: 100%;
+	margin-top: 30px;
+	object-fit: cover;
+	height: 275px;
+	border-radius: 5px;
 }
 
 .jumbotron {
-  margin: 0 auto;
-  background-color: #24305E;
-  border-radius: 5px;
-  color:#A8D0E6;
-  max-width: 800px;
-  padding: 80px;
+	margin: 0 auto;
+	background-color: #24305e;
+	border-radius: 5px;
+	color: #a8d0e6;
+	max-width: 800px;
+	padding: 80px;
 }
 
 .check-btn {
-  background-color:#464646a3 !important;
-  position: absolute;
-  top: 40%;
-  left: 20%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  font-size: 16px;
-  padding: 12px 24px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+	background-color: #464646a3 !important;
+	position: absolute;
+	top: 40%;
+	left: 20%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	font-size: 16px;
+	padding: 12px 24px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
 }
-
-
 
 .times-btn {
-  background-color:#464646a3 !important;
-  position: absolute;
-  top: 40%;
-  left: 80%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  font-size: 16px;
-  padding: 12px 24px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+	background-color: #464646a3 !important;
+	position: absolute;
+	top: 40%;
+	left: 80%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	font-size: 16px;
+	padding: 12px 24px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
 }
 
-.check-btn:hover,.times-btn:hover {
-    background-color:#212121a3;
-  }
+.check-btn:hover,
+.times-btn:hover {
+	background-color: #212121a3;
+}
 
 .fas {
-  color: #ededed;
-  ;
+	color: #ededed;
 }
 
 .wrapper {
-  position: relative;
+	position: relative;
 }
 
 #submit-btn {
-    margin-top: 30px;
-    float: right;
-    background-color: #F76C6C;
-    color:#24305E;
-    font-size: 25px;
+	margin-top: 30px;
+	float: right;
+	background-color: #f76c6c;
+	color: #24305e;
+	font-size: 25px;
 }
 
 #submit-btn:hover {
-    background-color: #da4c4c;
+	background-color: #da4c4c;
+}
+
+nav {
+	font-family: "Advent Pro";
+	background-color: none;
+	color: white;
+	padding-right: 10px;
+}
+
+.navbar-nav a {
+	color: white !important;
+	text-align: right;
+}
+
+.navbar-nav a:hover {
+	color: #f76c6c;
+}
+
+.navbar-toggler {
+	margin: 0;
 }

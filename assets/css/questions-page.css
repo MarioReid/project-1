@@ -30,7 +30,8 @@ button {
 	margin: 10px;
 }
 
-.active, button:hover {
+.active,
+button:hover {
 	background-color: #374785 !important;
 	color: #f76c6c !important;
 }
@@ -38,4 +39,28 @@ button {
 #nextBtn {
 	float: right;
 	margin-top: 200px;
+}
+
+.ans {
+	text-align: center;
+}
+
+nav {
+	font-family: "Advent Pro";
+	background-color: none;
+	color: white;
+	padding-right: 10px;
+}
+
+.navbar-nav a {
+	color: white !important;
+	text-align: right;
+}
+
+.navbar-nav a:hover {
+	color: #f76c6c;
+}
+
+.navbar-toggler {
+	margin: 0;
 }
