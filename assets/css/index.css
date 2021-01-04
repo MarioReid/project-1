@@ -26,8 +26,14 @@ p {
 }
 
 .footer {
-	text-align: center;
+	padding-top: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 	color: white;
+	background-color: #374785;
 }
 
 .leftHalf {
