@@ -3,7 +3,7 @@ $(document).ready(function () {
   var APIkey = "eaf25249dc224e30241c400939108e64";
   var documentUrl = "https://marioreid.github.io/project-1/finalpage.html";
   var queryUrl =
-    "https://api.screenshotlayer.com/api/capture" +
+    "https://cors-anywhere.herokuapp.com/https://api.screenshotlayer.com/api/capture" +
     "?access_key=" +
     APIkey +
     "&url=" +
@@ -22,13 +22,16 @@ $(document).ready(function () {
     visionBoardDiv.append(images);
   }
 
+  $(".pdf-btn").on("click", openPdf);
+  // window.open(queryUrl);
+
   // AJAX call to download vision board as a PDF
-  $.ajax({
-    url: queryUrl,
-    method: "POST",
-  }).then(function (response) {
-    $(".pdf-btn").on("click", function openPdf() {
-      window.open(queryUrl);
+  function openPdf() {
+    $.ajax({
+      url: queryUrl,
+      method: "POST",
+    }).then(function (response) {
+      console.log(response);
     });
-  });
+  }
 });
