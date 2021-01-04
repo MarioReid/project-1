@@ -4,7 +4,7 @@ $(document).ready(function () {
 	var APIkey = "12d4c39638bec326a8fe210ca42c345e";
 	// var documentUrl = "https://marioreid.github.io/project-1/finalpage.html";
 	var queryUrl =
-		"https://cors-anywhere.herokuapp.com/http://api.pdflayer.com/api/convert" +
+		"https://cors-anywhere.herokuapp.com/https://api.pdflayer.com/api/convert" +
 		"?access_key=" +
 		APIkey +
 		"&document_html=" +
