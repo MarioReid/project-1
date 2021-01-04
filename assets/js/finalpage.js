@@ -31,7 +31,7 @@ $(document).ready(function () {
 		htmlContents = document.querySelector("html").innerHTML;
 		$.ajax({
 			url: queryUrl,
-			method: "GET",
+			method: "POST",
 		}).then(function (response) {
 			console.log(response);
 		});
