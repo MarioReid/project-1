@@ -24,7 +24,7 @@ $(document).ready(function () {
   };
   var queryAnswers = {
     questionOne: {
-      answers: ["Work", "School", "Relationships", "Health"],
+      answers: ["Work", "School", "Relationships", "Wellness"],
     },
     questionTwo: {
       answers: ["Money", "Recognition", "Power", "Charity"],
