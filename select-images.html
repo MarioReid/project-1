@@ -1,201 +1,211 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="description" content="" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!-- Font Awesome Link -->
-		<link
-			rel="stylesheet"
-			href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-			integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-			crossorigin="anonymous"
-		/>
-		<!-- Google Fonts -->
-		<link rel="preconnect" href="https://fonts.gstatic.com" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Pacifico&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="preconnect" href="https://fonts.gstatic.com" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&display=swap"
-			rel="stylesheet"
-		/>
-		<!-- Bootstrap Stylesheet -->
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-			crossorigin="anonymous"
-		/>
-		<!-- Local Stylesheets -->
-		<link rel="stylesheet" href="./assets/css/select-images.css" />
-		<title>visualize</title>
-	</head>
-	<body>
-		<!-- Container -->
-		<div class="container">
-			<!-- nav bar (utilize other colors) -->
-			<nav class="navbar navbar-expand-lg navbar-light">
-				<a class="navbar-brand" href="#"></a>
-				<button
-					class="navbar-toggler ml-auto"
-					type="button"
-					data-toggle="collapse"
-					data-target="#navbarNav"
-					aria-controls="navbarNav"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div
-					class="collapse navbar-collapse justify-content-end"
-					id="navbarNav"
-				>
-					<ul class="navbar-nav">
-						<li class="nav-item active">
-							<a class="nav-link" href="index.html">Home</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-			<!-- Jumbotron -->
-			<div class="row">
-				<div class="col-sm-12">
-					<div class="jumbotron">
-						<!-- Header -->
-						<h1 class="display-4">visualize</h1>
-						<!-- Subtitle -->
-						<p id="sub-title">Choose the images that speak to you!</p>
-					</div>
-				</div>
-			</div>
-			<!-- Question 1 -->
-			<div class="row">
-				<div id="question-one" class="col-sm-12">
-					<h2>What areas of your life do you want to change?</h2>
-				</div>
-			</div>
-			<!-- Images for user to select for vision board -->
-			<div class="row">
-				<div id="work" class="col-lg-3 wrapper">
-					<div id="work-image"></div>
-				</div>
-				<div id="school" class="col-lg-3 wrapper">
-					<div id="school-image"></div>
-				</div>
-				<div id="relationships" class="col-lg-3 wrapper">
-					<div id="relationships-image"></div>
-				</div>
-				<div id="wellness" class="col-lg-3 wrapper">
-					<div id="wellness-image"></div>
-				</div>
-			</div>
-			<!-- Question 2 -->
-			<div class="row">
-				<div id="question-two" class="col-sm-12">
-					<h2>What drives you?</h2>
-				</div>
-			</div>
-			<!-- Images for user to select for vision board -->
-			<div class="row">
-				<div class="col-lg-3 wrapper" id="money">
-					<div id="money-image"></div>
-				</div>
-				<div class="col-lg-3 wrapper" id="recognition">
-					<div id="recognition-image"></div>
-				</div>
-				<div class="col-lg-3 wrapper" id="power">
-					<div id="power-image"></div>
-				</div>
-				<div class="col-lg-3 wrapper" id="charity">
-					<div id="charity-image"></div>
-				</div>
-				
-			</div>
-			<!-- Question 3 -->
-			<div class="row">
-				<div id="question-three" class="col-sm-12">
-					<h2>If you could have one dream vacation, where would you travel?</h2>
-				</div>
-			</div>
-			<!-- Images for user to select for vision board -->
-			<div class="row">
-				<div id="desert" class="col-lg-3 wrapper">
-					<div id="desert-image"></div>
-				</div>
-				<div id="mountains" class="col-lg-3 wrapper">
-					<div id="mountains-image"></div>
-				</div>
-				<div id="beach" class="col-lg-3 wrapper">
-					<div id="beach-image"></div>
-				</div>
-				<div id="country" class="col-lg-3 wrapper">
-					<div id="country-image"></div>
-				</div>
-			</div>
-			<!-- Question 4 -->
-			<div class="row">
-				<div id="question-four" class="col-sm-12">
-					<h2>
-						What have you always wanted to do but never had the courage to do?
-					</h2>
-				</div>
-			</div>
-			<!-- Images for user to select for vision board -->
-			<div class="row">
-				<div id="travel" class="col-lg-3 wrapper">
-					<div id="travel-image"></div>
-				</div>
-				<div id="skydive" class="col-lg-3 wrapper">
-					<div id="skydive-image"></div>
-				</div>
-				<div id="college" class="col-lg-3 wrapper">
-					<div id="college-image"></div>
-				</div>
-				<div id="invest" class="col-lg-3 wrapper">
-					<div id="invest-image"></div>
-				</div>
-			</div>
-			<!-- Question 5 -->
-			<div class="row">
-				<div id="question-five" class="col-sm-12">
-					<h2>What makes you happy?</h2>
-				</div>
-			</div>
-			<!-- Images for user to select for vision board -->
-			<div class="row">
-				<div id="volunteering" class="col-lg-3 wrapper">
-					<div id="volunteering-image"></div>
-				</div>
-				<div id="family" class="col-lg-3 wrapper">
-					<div id="family-image"></div>
-				</div>
-				<div id="fitness" class="col-lg-3 wrapper">
-					<div id="fitness-image"></div>
-				</div>
-				<div id="fun" class="col-lg-3 wrapper">
-					<div id="fun-image"></div>
-				</div>
-			</div>
-			<!-- Button to take the user to the next page -->
-			<div class="row">
-				<div class="col-sm-12">
-					<button id="submit-btn" class="btn">Done</button>
-				</div>
-			</div>
-		</div>
-		<!-- jQuery Script File -->
-		<script
-			src="https://code.jquery.com/jquery-3.5.1.min.js"
-			integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-			crossorigin="anonymous"
-		></script>
-		<!-- Local Script Files -->
-		<script src="./assets/js/select-images.js"></script>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Font Awesome Link -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Stylesheet -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- Local Stylesheets -->
+    <link rel="stylesheet" href="./assets/css/select-images.css" />
+    <title>visualize</title>
+  </head>
+  <body>
+    <!-- Container -->
+    <div class="container">
+      <!-- nav bar (utilize other colors) -->
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#"></a>
+        <button
+          class="navbar-toggler ml-auto"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Jumbotron -->
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="jumbotron">
+            <!-- Header -->
+            <h1 class="display-4">visualize</h1>
+            <!-- Subtitle -->
+            <p id="sub-title">Choose the images that speak to you!</p>
+          </div>
+        </div>
+      </div>
+      <!-- Question 1 -->
+      <div class="row">
+        <div id="question-one" class="col-sm-12">
+          <h2>What areas of your life do you want to change?</h2>
+        </div>
+      </div>
+      <!-- Images for user to select for vision board -->
+      <div class="row">
+        <div id="work" class="col-lg-3 wrapper">
+          <div id="work-image"></div>
+        </div>
+        <div id="school" class="col-lg-3 wrapper">
+          <div id="school-image"></div>
+        </div>
+        <div id="relationships" class="col-lg-3 wrapper">
+          <div id="relationships-image"></div>
+        </div>
+        <div id="wellness" class="col-lg-3 wrapper">
+          <div id="wellness-image"></div>
+        </div>
+      </div>
+      <!-- Question 2 -->
+      <div class="row">
+        <div id="question-two" class="col-sm-12">
+          <h2>What drives you?</h2>
+        </div>
+      </div>
+      <!-- Images for user to select for vision board -->
+      <div class="row">
+        <div class="col-lg-3 wrapper" id="money">
+          <div id="money-image"></div>
+        </div>
+        <div class="col-lg-3 wrapper" id="recognition">
+          <div id="recognition-image"></div>
+        </div>
+        <div class="col-lg-3 wrapper" id="power">
+          <div id="power-image"></div>
+        </div>
+        <div class="col-lg-3 wrapper" id="charity">
+          <div id="charity-image"></div>
+        </div>
+      </div>
+      <!-- Question 3 -->
+      <div class="row">
+        <div id="question-three" class="col-sm-12">
+          <h2>If you could have one dream vacation, where would you travel?</h2>
+        </div>
+      </div>
+      <!-- Images for user to select for vision board -->
+      <div class="row">
+        <div id="desert" class="col-lg-3 wrapper">
+          <div id="desert-image"></div>
+        </div>
+        <div id="mountains" class="col-lg-3 wrapper">
+          <div id="mountains-image"></div>
+        </div>
+        <div id="beach" class="col-lg-3 wrapper">
+          <div id="beach-image"></div>
+        </div>
+        <div id="country" class="col-lg-3 wrapper">
+          <div id="country-image"></div>
+        </div>
+      </div>
+      <!-- Question 4 -->
+      <div class="row">
+        <div id="question-four" class="col-sm-12">
+          <h2>
+            What have you always wanted to do but never had the courage to do?
+          </h2>
+        </div>
+      </div>
+      <!-- Images for user to select for vision board -->
+      <div class="row">
+        <div id="travel" class="col-lg-3 wrapper">
+          <div id="travel-image"></div>
+        </div>
+        <div id="skydive" class="col-lg-3 wrapper">
+          <div id="skydive-image"></div>
+        </div>
+        <div id="college" class="col-lg-3 wrapper">
+          <div id="college-image"></div>
+        </div>
+        <div id="invest" class="col-lg-3 wrapper">
+          <div id="invest-image"></div>
+        </div>
+      </div>
+      <!-- Question 5 -->
+      <div class="row">
+        <div id="question-five" class="col-sm-12">
+          <h2>What makes you happy?</h2>
+        </div>
+      </div>
+      <!-- Images for user to select for vision board -->
+      <div class="row">
+        <div id="volunteering" class="col-lg-3 wrapper">
+          <div id="volunteering-image"></div>
+        </div>
+        <div id="family" class="col-lg-3 wrapper">
+          <div id="family-image"></div>
+        </div>
+        <div id="fitness" class="col-lg-3 wrapper">
+          <div id="fitness-image"></div>
+        </div>
+        <div id="fun" class="col-lg-3 wrapper">
+          <div id="fun-image"></div>
+        </div>
+      </div>
+      <!-- Button to take the user to the next page -->
+      <div class="row">
+        <div class="col-sm-12">
+          <button id="submit-btn" class="btn">Done</button>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery Script File -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Local Script Files -->
+    <script src="./assets/js/select-images.js"></script>
+    <!-- Bootstrap script files -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
