@@ -11,6 +11,7 @@ $(document).ready(function () {
     "&viewport=1440x900" +
     "&fullpage=1" +
     "&format=JPG";
+    // https://cors-anywhere.herokuapp.com/https://api.screenshotlayer.com/api/capture?access_key=eaf25249dc224e30241c400939108e64&url=https://marioreid.github.io/project-1/finalpage.html&viewport=1440x900&fullpage=1
   var visionBoard = JSON.parse(localStorage.getItem("images")) || [];
 
   // Append images from local storage
