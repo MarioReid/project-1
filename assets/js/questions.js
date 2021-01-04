@@ -24,19 +24,19 @@ $(document).ready(function () {
   };
   var queryAnswers = {
     questionOne: {
-      answers: ["Work", "School", "Relationships", "Health"],
+      answers: ["Work", "School", "Relationships", "Wellness"],
     },
     questionTwo: {
-      answers: ["Money", "Recognition", "Power", "Passion", "Helping others"],
+      answers: ["Money", "Recognition", "Power", "Helping others"],
     },
     questionThree: {
       answers: ["Islands", "Mountains", "Beach", "Country"],
     },
     questionFour: {
-      answers: ["Travel", "Sports activities", "Go back to school"],
+      answers: ["Travel", "Skydive", "Go back to school", "Change careers" ],
     },
     questionFive: {
-      answers: ["Money", "Family", "Helping others", "Fun"],
+      answers: ["Volunteering", "Family", "Fitness", "Fun"],
     },
   };
 
