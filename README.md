@@ -11,6 +11,9 @@ View the deployed application here: https://marioreid.github.io/project-1/
 * [Credits](#credits)
 * [License](#license)
 
+## Visualize
+![Screenshot of vision board](./assets/images/your-vision-board-screenshot.png)
+
 ## Installation
 1. Go to the [GitHub repository for Visualize](https://github.com/MarioReid/project-1/issues).
 2. Click the green **Code** button.
@@ -18,18 +21,14 @@ View the deployed application here: https://marioreid.github.io/project-1/
 4. In your terminal, go into the directory that you want to host Visualize.
 5. Use the command **git clone [insert SSH key URL]** and click **Enter** (*Requires Git*).
 ## Usage
-First, the user answers a series of prompts to choose what they would visualize in the future.
-<!-- Insert Screenshot -->
-![Screenshot of Question and Answers]()
-Next, the user would pick images based on what user chose based on the series of questions. 
-<!-- Insert Screenshot -->
-![Screenshot of Images to Select]()
+First, the user is taken to the landing page where they are  given a description of the app and an inspirational quote.
+![Screenshot of app description and inspirational quote](./assets/images/landing-page-screenshot.png)
+Then, the user answers a series of questions to help capture their goals.
+![Screenshot of Question and Answers](./assets/images/questions-screenshot.png)
+Next, the user picks images based on their answers to the previous questions.
+![Screenshot of Images to Select](./assets/images/select-images-screenshot.png)
 Then, a vision board is generated with the images the user chose.
-<!-- Insert Screenshot -->
-![Screenshot of Vision Board]()
-Once the vision board has been created, the user may download the final product as a PDF.
-<!-- Insert Screenshot -->
-![Screenshot of PDF]()
+![Screenshot of Vision Board](./assets/images/your-vision-board-screenshot.png)
 ## Credits
 The following people contributed to the success of this application. You can view their GitHub profiles by clicking on their names:
 * [Miranda McDonald](https://github.com/mirandagrace-dev)
