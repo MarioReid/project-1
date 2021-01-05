@@ -28,6 +28,10 @@ h2 {
 	margin-top: 30px;
 }
 
+.navbar-toggler {
+	background-color: #f76c6c;
+}
+
 .container {
 	margin-bottom: 30px;
 }
